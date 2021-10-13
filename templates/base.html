@@ -30,6 +30,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="{% static 'js/base.js' %}"></script>
+  <script src="https://kit.fontawesome.com/ab94d40537.js" crossorigin="anonymous"></script>
   {% endblock %}
 
   {% block extra_js %}
@@ -39,68 +40,101 @@
 </head>
 
 <body>
-  <header class="container-fluid fixed-top">
-
+  <header class=" fixed-top">
+    <main>
     <div class="row">
       <div class="col free-shipping-banner">
         <p class="text-uppercase text-center">
           Free shipping on all orders over €40
         </p>
       </div>
-    </div>
+      </div>
 
-    
+      <div class="row">
+        <div class="col-6">
+          <div class="nav-right visible-xs">
+            <div class="button" id="btn">
+              <div class="bar top"></div>
+              <div class="bar middle"></div>
+              <div class="bar bottom"></div>
+            </div>
+          </div>
+          <!-- nav-right -->
+          
+          
+          
+            <nav>
+              <div class="nav-right hidden-xs">
+                <div class="button" id="btn">
+                  <div class="bar top"></div>
+                  <div class="bar middle"></div>
+                  <div class="bar bottom"></div>
+                </div>
+              </div>
+              <!-- nav-right -->
+            </nav>
+          
+        </div>
+        <div class="col-6">
+          <a
+          class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+          <div class="shopping-bag">
+            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+            <p class="my-0">
+              {% if grand_total %}
+              ${{ grand_total|floatformat:2 }}
+              {% else %}
+              €0.00
+              {% endif %}
+            </p>
+          </div>
+        </a>
+        </div>
+      </div>
+        
+
+        <div class="col-4 col-lg-4 my-auto py-1 py-lg-0">
+      </div>
+
+      <div class="row logo-row">
+        <div class="container logo-div col-4 col-lg-4 my-auto py-1 py-lg-0">
+          <img src="{% static 'images/test-logo.svg' %}" alt="" class="logo">
+        </div>
+      </div>
+
   </header>
 
 
-    {% if messages %}
-    <div class="message-container"></div>
-    {% endif %}
-    <!--https://codepen.io/tonkec/pen/gryZmg-->
-    <div class="nav-right visible-xs">
-      <div class="button" id="btn">
-        <div class="bar top"></div>
-        <div class="bar middle"></div>
-        <div class="bar bottom"></div>
-      </div>
-    </div>
-    <!-- nav-right -->
-    <main>
+  {% if messages %}
+  <div class="message-container"></div>
+  {% endif %}
+  <!--https://codepen.io/tonkec/pen/gryZmg-->
+  
 
+  
 
-      <nav>
-        <div class="nav-right hidden-xs">
-          <div class="button" id="btn">
-            <div class="bar top"></div>
-            <div class="bar middle"></div>
-            <div class="bar bottom"></div>
-          </div>
+  <div class="sidebar">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Home</a></li>
+      <li class="sidebar-item dropdown"><a href="#" class="sidebar-anchor dropdown-toggle" data-toggle="dropdown"
+          id="products" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+        <div class="dropdown-container">
+          <ul class="dropdown-menu" aria-labelledby="products">
+            <li><a class="sidebar-anchor" href="#">Action</a></li>
+            <li><a class="sidebar-anchor" href="#">Another action</a></li>
+            <li><a class="sidebar-anchor" href="#">Something else here</a></li>
+          </ul>
         </div>
-        <!-- nav-right -->
-      </nav>
+      </li>
+      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Register</a></li>
+      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Contact Us</a></li>
+    </ul>
+  </div>
 
-      {% block content %}
-      {% endblock %}
-
-    </main>
-
-    <div class="sidebar">
-      <ul class="sidebar-list">
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Home</a></li>
-        <li class="sidebar-item dropdown"><a href="#" class="sidebar-anchor dropdown-toggle" data-toggle="dropdown"
-            id="products" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-          <div class="dropdown-container">
-            <ul class="dropdown-menu" aria-labelledby="products">
-              <li><a class="sidebar-anchor" href="#">Action</a></li>
-              <li><a class="sidebar-anchor" href="#">Another action</a></li>
-              <li><a class="sidebar-anchor" href="#">Something else here</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Register</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Contact Us</a></li>
-      </ul>
-    </div>
+  
+  </main>
+  {% block content %}
+    {% endblock %}
 
   {% block page_header %}
   {% endblock %}

@@ -12,7 +12,8 @@ html {
 main {
   z-index: 2;
   position: relative;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   background-color: #F4A261;
   -webkit-transition: transform .7s ease-in-out;
   -moz-transition: transform .7s ease-in-out;
@@ -53,9 +54,18 @@ main {
 
 .nav-right {
   position: fixed;
-  left: 40px;
+  left: 30px;
   top: 20px;
+  padding-top: 20px;
+  z-index: 3;
+  
 }
+
+@media (max-width: 991.98px) { 
+  .nav-right {
+    left: 20px;
+  }
+ }
 
 .nav-right.visible-xs {
   z-index: 3;
@@ -270,4 +280,29 @@ nav {
 /*---- Free Shipping Banner ---*/
 .free-shipping-banner {
   background-color: #2A9D8F;
+  color: #fafafa;
+  width: 100vw;
+}
+
+.free-shipping-banner p {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.logo {
+  height: 100px;
+  width: 70px;
+}
+
+.logo-div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+
+.shopping-bag {
+  float: right;
+  text-align: center;
+  padding-right: 20px;
+  color: #fafafa;
 }
