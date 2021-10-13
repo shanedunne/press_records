@@ -29,7 +29,7 @@
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="{% static 'js/base.js' %}"></script>
+  <script src="{% static 'js/base.js' %}"></script>
   {% endblock %}
 
   {% block extra_js %}
@@ -39,47 +39,68 @@
 </head>
 
 <body>
-  <header class="container-fluid fixed-top"></header>
+  <header class="container-fluid fixed-top">
 
-  {% if messages %}
-  <div class="message-container"></div>
-  {% endif %}
-
-  <div class="nav-right visible-xs">
-    <div class="button" id="btn">
-      <div class="bar top"></div>
-      <div class="bar middle"></div>
-      <div class="bar bottom"></div>
-    </div>
-  </div>
-  <!-- nav-right -->
-  <main>
-  
-  
-    <nav>
-      <div class="nav-right hidden-xs">
-        <div class="button" id="btn">
-          <div class="bar top"></div>
-          <div class="bar middle"></div>
-          <div class="bar bottom"></div>
-        </div>
+    <div class="row">
+      <div class="col free-shipping-banner">
+        <p class="text-uppercase text-center">
+          Free shipping on all orders over €40
+        </p>
       </div>
-      <!-- nav-right -->
-    </nav>
+    </div>
+
     
-  {% block content %}
-  {% endblock %}
-  
-  </main>
-  
-  <div class="sidebar">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 1</a></li>
-      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 2</a></li>
-      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 3</a></li>
-      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 4</a></li>
-    </ul>
-  </div>
+  </header>
+
+
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
+    <!--https://codepen.io/tonkec/pen/gryZmg-->
+    <div class="nav-right visible-xs">
+      <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+      </div>
+    </div>
+    <!-- nav-right -->
+    <main>
+
+
+      <nav>
+        <div class="nav-right hidden-xs">
+          <div class="button" id="btn">
+            <div class="bar top"></div>
+            <div class="bar middle"></div>
+            <div class="bar bottom"></div>
+          </div>
+        </div>
+        <!-- nav-right -->
+      </nav>
+
+      {% block content %}
+      {% endblock %}
+
+    </main>
+
+    <div class="sidebar">
+      <ul class="sidebar-list">
+        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Home</a></li>
+        <li class="sidebar-item dropdown"><a href="#" class="sidebar-anchor dropdown-toggle" data-toggle="dropdown"
+            id="products" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+          <div class="dropdown-container">
+            <ul class="dropdown-menu" aria-labelledby="products">
+              <li><a class="sidebar-anchor" href="#">Action</a></li>
+              <li><a class="sidebar-anchor" href="#">Another action</a></li>
+              <li><a class="sidebar-anchor" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Register</a></li>
+        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Contact Us</a></li>
+      </ul>
+    </div>
 
   {% block page_header %}
   {% endblock %}
@@ -89,6 +110,10 @@
 
 
   {% block postloadjs %}
+  <script type="text/javascript">
+    $(".dropdown-toggle").click(function () {
+          $(".dropdown-menu").css("display", "inline-block");
+  </script>
   {% endblock %}
 
 </body>
