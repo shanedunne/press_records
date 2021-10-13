@@ -42,12 +42,12 @@
 <body>
   <header class=" fixed-top">
     <main>
-    <div class="row">
-      <div class="col free-shipping-banner">
-        <p class="text-uppercase text-center">
-          Free shipping on all orders over €40
-        </p>
-      </div>
+      <div class="row">
+        <div class="col free-shipping-banner">
+          <p class="text-uppercase text-center">
+            Free shipping on all orders over €40
+          </p>
+        </div>
       </div>
 
       <div class="row">
@@ -60,40 +60,39 @@
             </div>
           </div>
           <!-- nav-right -->
-          
-          
-          
-            <nav>
-              <div class="nav-right hidden-xs">
-                <div class="button" id="btn">
-                  <div class="bar top"></div>
-                  <div class="bar middle"></div>
-                  <div class="bar bottom"></div>
-                </div>
+
+
+
+          <nav>
+            <div class="nav-right hidden-xs">
+              <div class="button" id="btn">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
               </div>
-              <!-- nav-right -->
-            </nav>
-          
+            </div>
+            <!-- nav-right -->
+          </nav>
+
         </div>
         <div class="col-6">
-          <a
-          class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-          <div class="shopping-bag">
-            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-            <p class="my-0">
-              {% if grand_total %}
-              ${{ grand_total|floatformat:2 }}
-              {% else %}
-              €0.00
-              {% endif %}
-            </p>
-          </div>
-        </a>
+          <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+            <div class="shopping-bag">
+              <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+              <p class="my-0">
+                {% if grand_total %}
+                ${{ grand_total|floatformat:2 }}
+                {% else %}
+                €0.00
+                {% endif %}
+              </p>
+            </div>
+          </a>
         </div>
       </div>
-        
 
-        <div class="col-4 col-lg-4 my-auto py-1 py-lg-0">
+
+      <div class="col-4 col-lg-4 my-auto py-1 py-lg-0">
       </div>
 
       <div class="row logo-row">
@@ -109,9 +108,9 @@
   <div class="message-container"></div>
   {% endif %}
   <!--https://codepen.io/tonkec/pen/gryZmg-->
-  
 
-  
+
+
 
   <div class="sidebar">
     <ul class="sidebar-list">
@@ -131,10 +130,10 @@
     </ul>
   </div>
 
-  
+
   </main>
   {% block content %}
-    {% endblock %}
+  {% endblock %}
 
   {% block page_header %}
   {% endblock %}
