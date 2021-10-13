@@ -7,7 +7,7 @@
   {% block meta %}
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   {% endblock %}
 
   {% block extra_meta %}
@@ -29,6 +29,7 @@
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/base.js' %}"></script>
   {% endblock %}
 
   {% block extra_js %}
@@ -44,36 +45,48 @@
   <div class="message-container"></div>
   {% endif %}
 
+  <div class="nav-right visible-xs">
+    <div class="button" id="btn">
+      <div class="bar top"></div>
+      <div class="bar middle"></div>
+      <div class="bar bottom"></div>
+    </div>
+  </div>
+  <!-- nav-right -->
+  <main>
+  
+  
+    <nav>
+      <div class="nav-right hidden-xs">
+        <div class="button" id="btn">
+          <div class="bar top"></div>
+          <div class="bar middle"></div>
+          <div class="bar bottom"></div>
+        </div>
+      </div>
+      <!-- nav-right -->
+    </nav>
+    
+  {% block content %}
+  {% endblock %}
+  
+  </main>
+  
+  <div class="sidebar">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 1</a></li>
+      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 2</a></li>
+      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 3</a></li>
+      <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 4</a></li>
+    </ul>
+  </div>
+
   {% block page_header %}
   {% endblock %}
 
-  {% block content %}
-  {% endblock %}
 
 
-  <!-- https://codepen.io/arefeh_htmi/pen/bGpyKZd -->
-  <input type="checkbox" id="ham-menu">
-  <label for="ham-menu">
-    <div class="hide-des">
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-    </div>
 
-  </label>
-  <div class="full-page-green"></div>
-  <div class="ham-menu">
-    <ul class="centre-text bold-text">
-      <li>Home</li>
-      <li>Shop</li>
-      <li>My Account</li>
-      <li>Contact us</li>
-
-    </ul>
-  </div>
 
   {% block postloadjs %}
   {% endblock %}
