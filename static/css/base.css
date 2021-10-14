@@ -7,6 +7,7 @@ html {
   padding: 0;
   margin: 0;
   font-family: 'Oswald', sans-serif;
+  background-color: #F4A261;
 }
 
 main {
@@ -30,6 +31,15 @@ main {
   z-index: 1;
   left: 0;
   background-color: #264653;
+}
+
+.socials-sidebar {
+  font-size: 30px;
+  text-align: center;
+}
+
+.socials-sidebar i {
+  color: #F4A261;
 }
 
 .bar {
