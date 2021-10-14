@@ -10,6 +10,7 @@ html {
   background-color: #F4A261;
 }
 
+
 main {
   z-index: 2;
   position: relative;
@@ -21,6 +22,7 @@ main {
   -ms-transition: transform .7s ease-in-out;
   -o-transition: transform .7s ease-in-out;
   transition: transform .7s ease-in-out;
+  padding-top: 250px;
 }
 
 .sidebar {
@@ -40,6 +42,12 @@ main {
 
 .socials-sidebar i {
   color: #F4A261;
+}
+
+.socials-sidebar i:hover,
+.socials-sidebar i:active {
+  color: #fafafa;
+  transition: 0.5s;
 }
 
 .bar {
@@ -134,6 +142,14 @@ main {
   transform: translateX(400px);
 }
 
+@media (max-width: 767.98px) { .move-to-left {
+  -webkit-transform: translateX(300px);
+  -moz-transform: translateX(300px);
+  -ms-transform: translateX(300px);
+  -o-transform: translateX(300px);
+  transform: translateX(300px);
+} }
+
 nav {
   padding-top: 30px;
 }
@@ -205,6 +221,11 @@ nav {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 7px;
+}
+
+.sidebar-anchor:hover,
+.sidebar-anchor:active {
+  color: #F4A261;
 }
 
 .sidebar-anchor:before {
@@ -304,15 +325,21 @@ nav {
   width: 70px;
 }
 
+
 .logo-div {
     display: flex;
     justify-content: center;
-    padding-bottom: 30px;
+    padding-bottom: 300px;
+  
   }
 
-.shopping-bag {
+.shopping-bag ul li {
   float: right;
   text-align: center;
   padding-right: 20px;
   color: #fafafa;
+}
+
+.test {
+  
 }
