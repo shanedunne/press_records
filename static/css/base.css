@@ -100,24 +100,36 @@ main {
 .sidebar-anchor {
   color: #fafafa;
   text-decoration: none;
-  font-size: 1.8em;
+  font-size: 2.6em;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 7px;
 }
 
-.sidebar-anchor:hover {
-  color: #fafafa;
-}
-
+.sidebar-anchor:hover,
 .sidebar-anchor:active {
   color: #F4A261;
 }
 
+.sidebar-anchor-collapse {
+  color: #fafafa;
+  text-decoration: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 7px;
+}
+
+.sidebar-anchor-collapse:hover,
+.sidebar-anchor-collapse:active {
+  color: #F4A261;
+}
+
+
 .offcanvas-title {
   color: #fafafa;
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: 3em;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 7px;
@@ -126,4 +138,19 @@ main {
 
 .btn-close {
   color: #fafafa;
+}
+
+.dropdown-shop {
+  width: 100%;
+  background-color: #264653;
+  text-align: center;
+}
+
+.dropdown-item {
+  color: #fafafa;
+  font-size: 1.8em;
+}
+
+.dropdownMenuButton {
+  position: relative;
 }
