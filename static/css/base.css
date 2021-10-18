@@ -70,7 +70,11 @@ main {
 }
 
 .header-list {
-  color: white;
+  color: #fafafa;
+}
+.header-list:hover,
+.header-list:active {
+  color: #264653;
 }
 
 .menu-icon {
@@ -109,6 +113,7 @@ main {
 .sidebar-anchor:hover,
 .sidebar-anchor:active {
   color: #F4A261;
+  transition: 0.4s;
 }
 
 .sidebar-anchor-collapse {
@@ -123,6 +128,7 @@ main {
 .sidebar-anchor-collapse:hover,
 .sidebar-anchor-collapse:active {
   color: #F4A261;
+  transition: 0.2s;
 }
 
 
@@ -147,10 +153,11 @@ main {
 }
 
 .dropdown-item {
-  color: #fafafa;
+  color: #264653;
   font-size: 1.8em;
 }
 
 .dropdownMenuButton {
   position: relative;
 }
+
