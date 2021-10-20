@@ -41,7 +41,7 @@
 
 <body>
   <main>
-    <header class=" fixed-top">
+    <header class=" fixed-lg-top">
       <div class="row">
         <div class="col free-shipping-banner">
           <p class="text-uppercase text-center">
@@ -104,8 +104,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-10 col-lg-4 mx-auto py-1 py-lg-0">
-          <form method="GET" action="">
+        <div class="col-10 col-lg-4 mx-auto py-1 py-lg-0 mb-2">
+          <form method="GET" action="{% url 'products' %}">
               <div class="input-group w-100">
                   <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                   <div class="input-group-append">
@@ -131,7 +131,7 @@
       <div class="offcanvas-body">
         <div>
           <ul>
-            <li><a href="" class="sidebar-anchor">Home</a></li>
+            <li><a href="{% url 'home' %}" class="sidebar-anchor">Home</a></li>
             <li>
               <a href="#otherSections" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-anchor" role="button" aria-controls="otherSections">
                   Shop</a>

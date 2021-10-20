@@ -15,10 +15,6 @@ header {
 }
 
 
-main {
-
-  padding-top: 250px;
-}
 
 
 
@@ -185,10 +181,10 @@ main {
 
  @media (min-width: 992px) { 
   .product-detail-name {
-    font-size: 50px
+    font-size: 58px
   }
  
   .product-detail-artist {
-    font-size: 40px;
+    font-size: 44px;
   }
   }
