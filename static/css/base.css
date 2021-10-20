@@ -167,3 +167,28 @@ main {
   width: 100%; 
   height: auto;   
  }
+
+ /*---- Products Page ----*/
+ .product-name {
+   font-size: 22px;
+ }
+
+ /*---- Product Detail Page ---*/
+
+ .product-detail-name {
+   font-size: 35px;
+ }
+
+ .product-detail-artist {
+   font-size: 28px;
+ }
+
+ @media (min-width: 992px) { 
+  .product-detail-name {
+    font-size: 50px
+  }
+ 
+  .product-detail-artist {
+    font-size: 40px;
+  }
+  }
