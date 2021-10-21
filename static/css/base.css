@@ -1,22 +1,19 @@
 /* --- Menu - https://codepen.io/tonkec/pen/gryZmg --- */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 body,
 html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lora', serif;
   background-color: #fafafa;
 }
+
 
 header {
   background-color: #F4A261;
 }
-
-
-
-
 
 .socials-sidebar {
   font-size: 30px;
