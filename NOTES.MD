@@ -1,0 +1,1 @@
+product.catagory == vinyls on products page
