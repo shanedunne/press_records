@@ -187,4 +187,7 @@ header {
   .product-detail-artist {
     font-size: 44px;
   }
+  
+  .product-detail-price {
+    font-size: 24px;
   }
