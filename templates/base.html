@@ -41,8 +41,8 @@
 
 <body>
   <main>
-    <header class=" fixed-lg-top">
-      <div class="row">
+    <header class="fixed-lg-top">
+      <div class="row g-0">
         <div class="col free-shipping-banner">
           <p class="text-uppercase text-center">
             Free shipping on all orders over €40
@@ -58,13 +58,13 @@
         </div>
         <div class="col-4 col-lg-4 my-auto py-1 py-lg-0">
           <div class="text-center">
-            <img src="{% static 'images/test-logo.svg' %}" alt="" class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'images/test-logo.svg' %}" alt="" class="logo"></a>
           </div>
         </div>
         <div class="col-4 col-lg-4 my-auto py-1 py-lg-0  shopping-bag">
           <ul class="list-inline list-unstyled text-lg-right my-0">
             <li class="list-inline-item">
-              <a class="{% if grand_total %}text-info font-weight-bold{% else %}header-list{% endif %} nav-link"
+              <a class="{% if grand_total %}item-in-bag{% else %}header-list{% endif %} nav-link"
                 href="{% url 'view_bag' %}">
                 <div class="text-center">
                   <div><i class="fas fa-shopping-bag fa-lg"></i></div>

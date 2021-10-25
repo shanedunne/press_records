@@ -1,6 +1,7 @@
 /* --- Menu - https://codepen.io/tonkec/pen/gryZmg --- */
 
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Oswald&display=swap');
 body,
 html {
   height: 100%;
@@ -62,6 +63,17 @@ header {
   color: #fafafa;
 }
 
+.item-in-bag {
+  font-weight: bold;
+  color: #2A9D8F;
+}
+
+.item-in-bag:hover,
+.item-in-bag:active {
+  font-weight: bold;
+  color: #2A9D8F;
+}
+
 .header-list {
   color: #fafafa;
 }
@@ -101,6 +113,7 @@ header {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 7px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .sidebar-anchor:hover,
@@ -116,6 +129,7 @@ header {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 7px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .sidebar-anchor-collapse:hover,
@@ -188,3 +202,58 @@ header {
   .product-detail-price {
     font-size: 24px;
   }
+
+  /* -- quantity box -  https://embed.plnkr.co/plunk/B5waxZ -- */
+
+.quantity {
+  display: inline-block; }
+ 
+ .quantity .input-text.qty {
+  width: 35px;
+  height: 39px;
+  padding: 0 5px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #efefef;
+ }
+ 
+ .quantity.buttons_added {
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: top; }
+ 
+ .quantity.buttons_added input {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  box-shadow: none;
+ }
+ 
+ .quantity.buttons_added .minus,
+ .quantity.buttons_added .plus {
+  padding: 7px 10px 8px;
+  height: 41px;
+  background-color: #ffffff;
+  border: 1px solid #efefef;
+  cursor:pointer;}
+ 
+ .quantity.buttons_added .minus {
+  border-right: 0; }
+ 
+ .quantity.buttons_added .plus {
+  border-left: 0; }
+ 
+ .quantity.buttons_added .minus:hover,
+ .quantity.buttons_added .plus:hover {
+  background: #eeeeee; }
+ 
+ .quantity input::-webkit-outer-spin-button,
+ .quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0; }
+  
+  .quantity.buttons_added .minus:focus,
+ .quantity.buttons_added .plus:focus {
+  outline: none; }
