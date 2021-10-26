@@ -32,6 +32,7 @@
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
 
@@ -77,10 +78,12 @@
                                 </div>
                             </form>
                             <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </td>
+                        <td class="py-3">
+                            <button type="button" class="btn-close remove-item" aria-label="Close" id="remove_{{ item.item_id }}"></button>
                         </td>
                     </tr>
                     {% endfor %}
