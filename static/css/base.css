@@ -2,18 +2,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body,
 html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Lora', serif;
-  background-color: #fafafa;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F6F1;
+  color: #414833;
 }
 
 
 header {
-  background-color: #F4A261;
+  background-color: #656d4a;
 }
 
 .socials-sidebar {
@@ -22,7 +24,7 @@ header {
 }
 
 .socials-sidebar i {
-  color: #F4A261;
+  color: #f5f6f1;
 }
 
 .socials-sidebar i:hover,
@@ -97,7 +99,8 @@ header {
 }
 
 .offcanvas {
-  background-color: #264653;
+  background-color: #656d4a;
+  opacity: 80%;
 }
 
 .offcanvas-body ul {
@@ -113,7 +116,7 @@ header {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 7px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .sidebar-anchor:hover,
@@ -129,7 +132,7 @@ header {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 7px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .sidebar-anchor-collapse:hover,
@@ -180,6 +183,16 @@ header {
    font-size: 22px;
  }
 
+ .product-card,
+ .card-footer {
+   background-color: #f5f6f1;
+ }
+
+ /*.product-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: 0.7s;
+}*/
+
  /*---- Product Detail Page ---*/
 
  .product-detail-name {
@@ -201,6 +214,43 @@ header {
   
   .product-detail-price {
     font-size: 24px;
+  }
+
+  .store-button {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .store-button-dark {
+    color: #f5f6f1;
+    background: #656d4a;
+    border: .1rem solid #656d4a;
+    border-radius: 0px;
+  }
+
+  .store-button-dark:hover,
+  .store-button-dark:active {
+    color: #656d4a;
+    background: #f5f6f1;
+    border: .1rem solid #656d4a;
+    border-radius: 0px;
+    transition: 0.6s ease-in-out;
+  }
+
+  .store-button-light {
+    color: #656d4a;
+    background: #f5f6f1;
+    border: .1rem solid #656d4a;
+    border-radius: 0px;
+  }
+
+  .store-button-light:hover,
+  .store-button-light:active {
+    color: #f5f6f1;
+    background: #656d4a;
+    border: .1rem solid #656d4a;
+    border-radius: 0px;
+    transition: 0.6s ease-in-out;
   }
 
   /* -- quantity box -  https://embed.plnkr.co/plunk/B5waxZ -- */
@@ -230,6 +280,15 @@ header {
 .update-link,
 .remove-item {
   cursor: pointer;
+  color: #414833;
+}
+
+.update-link:hover,
+.remove-item:hover,
+.update-link:active,
+.remove-item:active {
+  cursor: pointer;
+  color: #4C563E;
 }
 
 .message-container {
@@ -298,3 +357,4 @@ header {
   overflow-y: auto;
 }
 
+/*---- Search ------*/
