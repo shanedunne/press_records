@@ -24,15 +24,15 @@
         <div class="col">
             {% if bag_items %}
             <div class="table-responsive rounded">
-                <table class="table table-sm table-borderless">
+                <table class="table table-sm table-borderless bag-table">
                     <thead class="text-black">
                         <tr>
-                            <th scope="col">Product Info</th>
-                            <th scope="col"></th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
-                            <th scope="col"></th>
+                            <th scope="col" class="bag-head">Product Info</th>
+                            <th scope="col" class="bag-head"></th>
+                            <th scope="col" class="bag-head">Price</th>
+                            <th scope="col" class="bag-head">Qty</th>
+                            <th scope="col" class="bag-head">Subtotal</th>
+                            <th scope="col" class="bag-head"></th>
                         </tr>
                     </thead>
 
@@ -40,11 +40,13 @@
                     <tr>
                         <td class="p-3 w-25">
                             <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                            <p class="my-0 mt-2 d-md-none"><strong>{{ item.product.name }}</strong> - {{ item.product.artist_name }}
+                            </p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong> - {{ item.product.artist_name }}
+                            <p class="my-0 d-none d-md-block"><strong>{{ item.product.name }}</strong> - {{ item.product.artist_name }}
                             </p>
-                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                            <p class="my-0 small text-muted d-none d-md-block">SKU: {{ item.product.sku|upper }}</p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ item.product.price }}</p>

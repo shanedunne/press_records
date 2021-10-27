@@ -54,3 +54,6 @@ html {
   border-radius: 0px;
   transition: 0.6s ease-in-out;
 }
+input[type=text]:focus{
+  outline: 2px solid orange;     /* oranges! yey */
+}
