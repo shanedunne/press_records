@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Oswald&display=swap');
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Lora', serif;
+  color: red;
+  background-color: #fafafa;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: orange !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(252, 186, 3 / 25%);
+}
