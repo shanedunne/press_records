@@ -44,41 +44,41 @@
     <header class="fixed-lg-top">
 
       <div class="row header-row g-0">
-        <div class="col-4 col-lg-4 my-auto py-1 py-lg-0">
+        <div class="col-4 col-lg-4 my-auto">
           <a href="#" class="menu-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
             aria-controls="offcanvasExample"><i class="fas fa-bars"></i></a>
 
         </div>
-        <div class="col-4 col-lg-4 my-auto py-1 py-lg-0">
+        <div class="col-4 col-lg-4 my-auto">
           <div class="text-center">
-            <a href="{% url 'home' %}"><img src="{% static 'images/test-logo.svg' %}" alt="" class="logo"></a>
+            <a class="d-none d-md-block logo" href="{% url 'home' %}">PRESS RECORDS</a>
           </div>
         </div>
-        <div class="col-4 col-lg-4 my-auto py-1 py-lg-0 g-0  shopping-bag">
+        <div class="col-4 col-lg-4 my-auto g-0 shopping-bag">
           <ul class="list-inline list-unstyled text-lg-right my-0">
-            <li class="list-inline-item">
-              <a class="{% if grand_total %}item-in-bag{% else %}header-list{% endif %} nav-link"
+            <li class="list-inline-item md-nav-item d-none d-md-block">
+              <a class="nav-link header-list"
+                href="{% url 'view_bag' %}">Shopping Bag
+              </a>
+            </li>
+            <li>
+              <a class="nav-link header-list d-md-none"
                 href="{% url 'view_bag' %}">
                 <div class="text-center">
                   <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                  <p class="my-0">
-                    {% if grand_total %}
-                    €{{ grand_total|floatformat:2 }}
-                    {% else %}
-                    €0.00
-                    {% endif %}
-                  </p>
                 </div>
               </a>
             </li>
-            <li class="list-inline-item dropdown">
-              <a class="nav-link  header-list" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <div class="text-center">
-                  <div><i class="fas fa-user fa-lg"></i></div>
-                  <p class="my-0">My Account</p>
-                </div>
+            <li class="list-inline-item md-nav-item dropdown">
+              <a class="nav-link header-list d-none d-md-block" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">My Account
               </a>
+            </li>
+            <li class="dropdown">
+              <a class="nav-link header-list d-md-none" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fas fa-user fa-lg"></i>
+              </a>
+            </li>
               <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
@@ -91,11 +91,82 @@
                 <a href="" class="dropdown-item">Login</a>
                 {% endif %}
               </div>
-            </li>
+            
 
           </ul>
         </div>
       </div>
+      <!--
+      <nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="top-navigation flex-row-between">
+                      <a href="#" class="menu-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                      aria-controls="offcanvasExample"><i class="fas fa-bars"></i></a>
+                        </button>
+                        <a class="logo text-shadow" href="{% url 'home' %}">PRESS RECORDS</a>
+                        <ul>
+                            <li class="top-nav-item d-none d-md-block dropdown-link">Account
+                            </li>
+                            <li class="top-nav-item dropdown-link  d-md-none">
+                                <i class="las la-user" aria-hidden="true">
+                                </i>
+                                <span class="visually-hidden">link to account</span>
+                            </li>
+                            <li>
+                                <a class="top-nav-item d-none d-md-block" href="{% url 'view_bag' %}">Cart
+                                </a>
+                            </li>
+                            <li class="d-md-none">
+                                <a class="top-nav-item" href="{% url 'view_bag' %}">
+                                    <i class="las la-shopping-bag " aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="account-dropdown" aria-labelledby="account-options">
+                        <button class="dropdown-close flex-center" aria-label="Close Navigation">
+                            <span class="line-x" aria-hidden="true"></span>
+                            <span class="line-y" aria-hidden="true"></span>
+                        </button>
+                        <ul id="account-options" class="account-menu">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <li class="account-item">
+                                <a href="">Stock Control
+                                </a>
+                            </li>
+                            <li class="account-item">
+                                <a href="">
+                                    Add Blog Post
+                                </a>
+                            </li>
+                            {% endif %}
+                            <li class="account-item">
+                                <a href="">My Account
+                                </a>
+                            </li>
+                            <li class="account-item">
+                                <a href="">Logout
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="account-item">
+                                <a href="">Login
+                                </a>
+                            </li>
+                            <li class="account-item">
+                                <a href="">Signup
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      -->
 
     </header>
 

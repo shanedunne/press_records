@@ -46,43 +46,7 @@ header {
   font-weight: 500;
 }
 
-.logo {
-  height: 100px;
-  width: 70px;
-}
 
-
-.header-row {
-  justify-content: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.shopping-bag ul li {
-  float: right;
-  text-align: center;
-  padding-right: 20px;
-  color: #fafafa;
-}
-
-.item-in-bag {
-  font-weight: bold;
-  color: #2A9D8F;
-}
-
-.item-in-bag:hover,
-.item-in-bag:active {
-  font-weight: bold;
-  color: #2A9D8F;
-}
-
-.header-list {
-  color: #fafafa;
-}
-.header-list:hover,
-.header-list:active {
-  color: #264653;
-}
 
 .menu-icon {
   font-size: 40px;
@@ -96,6 +60,44 @@ header {
 
 .menu-icon:active {
   color: #264653;
+}
+
+.logo {
+  color: #fff;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  margin-right: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.logo:focus,
+.logo:hover {
+  color: #fff;
+}
+
+.md-nav-item {
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-right: 1.5rem;
+  font-weight: 300;
+  letter-spacing: .2rem;
+  cursor: pointer;
+}
+
+.header-list {
+  color: #fafafa;
+}
+.header-list:hover,
+.header-list:active {
+  color: #fafafab7;
+}
+
+.shopping-bag ul li {
+  float: right;
 }
 
 .offcanvas {
@@ -342,11 +344,13 @@ header {
 .search-button {
   color: #F5F6F1;
   border: 1px solid #F5F6F1;
+  margin-left: 8px;
 }
 
 .search-button:hover,
 .search-button:focus {
-  color: #F5F6F1;
+  background-color: #F5F6F1;
+  color: #4C573D;
 }
 
 .sidebar-anchor-search {
