@@ -14,8 +14,13 @@ html {
 }
 
 
-header {
+nav {
   background-color: #656d4a;
+  opacity: 88%;
+}
+
+main {
+  padding-top: 60px;
 }
 
 .socials-sidebar {
@@ -32,20 +37,6 @@ header {
   color: #fafafa;
   transition: 0.5s;
 }
-
-
-/*---- Free Shipping Banner ---*/
-.free-shipping-banner {
-  background-color: #2A9D8F;
-  color: #fafafa;
-  width: 100vw;
-}
-
-.free-shipping-banner p {
-  margin: 0.5rem 0;
-  font-weight: 500;
-}
-
 
 
 .menu-icon {
@@ -182,6 +173,33 @@ header {
   position: relative;
 }
 
+/*----- Footer ------*/
+
+footer {
+  background-color: #656d4a;
+  height: 210px;
+}
+
+.footer-address-header {
+  color: #fafafa;
+  padding-top: 5px;
+}
+
+.footer-address {
+  margin: 0;
+  color: #fafafa;
+}
+
+.socials-footer {
+  font-size: 30px;
+  text-align: center;
+}
+
+.socials-footer i {
+  color: #f5f6f1;
+}
+
+
 /*-----Hero Image -----*/
 
 .hero-image img {
@@ -197,6 +215,16 @@ header {
  .product-card,
  .card-footer {
    background-color: #f5f6f1;
+ }
+
+ @media (min-width: 768px) {
+   .category-header {
+     font-size: 3.7em;
+   }
+ }
+
+ .category-header {
+   font-size: 2.6em;
  }
 
  /*.product-card:hover {
@@ -229,9 +257,15 @@ header {
   }
 
   .store-button {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     font-weight: 300;
   }
+  @media (min-width: 992px) { 
+    .store-button {
+    font-size: 1.2rem;
+    font-weight: 300;
+  } }
+  
 
   .store-button-dark {
     color: #f5f6f1;
@@ -285,6 +319,7 @@ header {
    cursor: pointer;
  }
 
+
  .buttons-added:hover {
    background: #eeeeee;
  }
@@ -305,8 +340,8 @@ header {
 
 .message-container {
   position: fixed;
-  top: 140px;
-  right: 15px;
+  top: 65px;
+  right: 5px;
   z-index: 99999999999;
 }
 
@@ -316,6 +351,10 @@ header {
 
 .toast-capper {
   height: 2px;
+}
+
+.toast-close {
+  margin-left: 95%;
 }
 
 .bag-notification-wrapper {
