@@ -99,14 +99,21 @@ header {
 }
 
 .offcanvas {
-  background-color: #656d4a;
-  opacity: 80%;
+  background-color: #4C573D;
+  opacity: 88%;
 }
 
 .offcanvas-body ul {
   list-style-type: none;
   padding-left: 0px;
 
+}
+.offcanvas-close {
+  margin-left: 95%;
+}
+
+.slideout-navigation button.slideout-exit {
+  text-align: right;
 }
 
 .sidebar-anchor {
@@ -115,13 +122,14 @@ header {
   font-size: 2.6em;
   text-transform: uppercase;
   position: relative;
-  padding-bottom: 7px;
+  padding-bottom: 12px;
   font-family: 'Roboto', sans-serif;
+  margin-left: 18%;
 }
 
 .sidebar-anchor:hover,
 .sidebar-anchor:active {
-  color: #F4A261;
+  color: #F5F6F1;
   transition: 0.4s;
 }
 
@@ -131,13 +139,14 @@ header {
   font-size: 1.5em;
   text-transform: uppercase;
   position: relative;
-  padding-bottom: 7px;
+  padding-bottom: 10px;
   font-family: 'Roboto', sans-serif;
+  margin-left: 31%;
 }
 
 .sidebar-anchor-collapse:hover,
 .sidebar-anchor-collapse:active {
-  color: #F4A261;
+  color: #F5F6F1;
   transition: 0.2s;
 }
 
@@ -203,10 +212,11 @@ header {
    font-size: 28px;
  }
 
- @media (min-width: 992px) { 
-  .product-detail-name {
-    font-size: 58px
-  }
+ @media (min-width: 992px) {
+   .product-detail-name {
+     font-size: 58px
+   }
+ }
  
   .product-detail-artist {
     font-size: 44px;
@@ -223,32 +233,32 @@ header {
 
   .store-button-dark {
     color: #f5f6f1;
-    background: #656d4a;
-    border: .1rem solid #656d4a;
+    background: #414833;
+    border: .1rem solid #414833;
     border-radius: 0px;
   }
 
   .store-button-dark:hover,
   .store-button-dark:active {
-    color: #656d4a;
+    color: #414833;
     background: #f5f6f1;
-    border: .1rem solid #656d4a;
+    border: .1rem solid #414833;
     border-radius: 0px;
-    transition: 0.6s ease-in-out;
+    transition: 0.4s ease-in-out;
   }
 
   .store-button-light {
-    color: #656d4a;
+    color: #414833;
     background: #f5f6f1;
-    border: .1rem solid #656d4a;
+    border: .1rem solid #414833;
     border-radius: 0px;
   }
 
   .store-button-light:hover,
   .store-button-light:active {
     color: #f5f6f1;
-    background: #656d4a;
-    border: .1rem solid #656d4a;
+    background: #414833;
+    border: .1rem solid #414833;
     border-radius: 0px;
     transition: 0.6s ease-in-out;
   }
@@ -306,51 +316,6 @@ header {
   height: 2px;
 }
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-.arrow-up {
-  width: 0; 
-  height: 0; 
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent; 
-  border-bottom: 10px solid black;
-  position: absolute;
-  top: -10px;
-  right: 56px;
-}
-
-/* Convenience classes - colors copied from Bootstrap */
-.arrow-primary {
-  border-bottom-color: #007bff !important;
-}
-
-.arrow-secondary {
-  border-bottom-color: #6c757d !important;
-}
-
-.arrow-success {
-  border-bottom-color: #28a745 !important;
-}
-
-.arrow-danger {
-  border-bottom-color: #dc3545 !important;
-}
-
-.arrow-warning {
-  border-bottom-color: #ffc107 !important;
-}
-
-.arrow-info {
-  border-bottom-color: #17a2b8 !important;
-}
-
-.arrow-light {
-  border-bottom-color: #f8f9fa !important;
-}
-
-.arrow-dark {
-  border-bottom-color: #343a40 !important;
-}
-
 .bag-notification-wrapper {
   height: 100px;
   overflow-x: hidden;
@@ -358,3 +323,33 @@ header {
 }
 
 /*---- Search ------*/
+
+
+
+.search-bar {
+  border-bottom: 1px solid #F5F6F1;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  background-color: #4C573D;
+  color: #F5F6F1;
+}
+
+.search-bar::placeholder {
+  color: #F5F6F1;
+}
+
+.search-button {
+  color: #F5F6F1;
+  border: 1px solid #F5F6F1;
+}
+
+.search-button:hover,
+.search-button:focus {
+  color: #F5F6F1;
+}
+
+.sidebar-anchor-search {
+  margin-left: 18%;
+  padding-bottom: 10px;
+}

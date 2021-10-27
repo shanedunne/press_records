@@ -1,5 +1,4 @@
 <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
-    <div class="arrow-up arrow-success"></div>
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-white text-dark">
         <strong class="mr-auto">Success!</strong>
@@ -29,10 +28,16 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="row">
-                <div class="col d-grid">
-                    <a href="{% url 'view_bag' %}" class="btn btn-success btn-block rounded-0">
-                        <span class="text-uppercase">Go To Secure Checkout</span>
+            <div class="row pt-2">
+                <div class="col d-flex">
+                    <a href="{% url 'view_bag' %}" class="btn store-button-light w-50">
+                        <span class="text-uppercase">Go To Bag</span>
+                        <span class="icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </span>
+                    </a>
+                    <a href="{% url 'checkout' %}" class="btn store-button-dark w-50">
+                        <span class="text-uppercase">Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>

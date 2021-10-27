@@ -17,3 +17,40 @@ html {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(252, 186, 3 / 25%);
 }
+
+.store-button {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.store-button-dark {
+  color: #f5f6f1;
+  background: #414833;
+  border: .1rem solid #414833;
+  border-radius: 0px;
+}
+
+.store-button-dark:hover,
+.store-button-dark:active {
+  color: #414833;
+  background: #f5f6f1;
+  border: .1rem solid #414833;
+  border-radius: 0px;
+  transition: 0.6s ease-in-out;
+}
+
+.store-button-light {
+  color: #414833;
+  background: #f5f6f1;
+  border: .1rem solid #414833;
+  border-radius: 0px;
+}
+
+.store-button-light:hover,
+.store-button-light:active {
+  color: #f5f6f1;
+  background: #414833;
+  border: .1rem solid #414833;
+  border-radius: 0px;
+  transition: 0.6s ease-in-out;
+}
