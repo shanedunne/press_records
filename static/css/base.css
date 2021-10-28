@@ -58,7 +58,6 @@ main {
   color: #fff;
   font-size: 2.2rem;
   text-transform: uppercase;
-  margin-right: 1.5rem;
   font-weight: 500;
   letter-spacing: .2rem;
   cursor: pointer;
@@ -118,7 +117,7 @@ main {
   position: relative;
   padding-bottom: 12px;
   font-family: 'Roboto', sans-serif;
-  margin-left: 15%;
+  margin-left: 13%;
 }
 
 .sidebar-anchor:hover,
@@ -135,7 +134,7 @@ main {
   position: relative;
   padding-bottom: 10px;
   font-family: 'Roboto', sans-serif;
-  margin-left: 23%;
+  margin-left: 20%;
 }
 
 .sidebar-anchor-collapse:hover,
@@ -381,6 +380,14 @@ footer {
   color: #F5F6F1;
 }
 
+.search-bar:focus,
+.search-bar:active {
+  border-bottom: 1px solid #F5F6F1;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+}
+
 .search-bar::placeholder {
   color: #F5F6F1;
 }
@@ -398,7 +405,7 @@ footer {
 }
 
 .sidebar-anchor-search {
-  margin-left: 18%;
+  margin-left: 14%;
   padding-bottom: 10px;
 }
 
