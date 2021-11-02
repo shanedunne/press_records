@@ -56,9 +56,9 @@ main {
 
 .logo {
   color: #fff;
-  font-size: 2.2rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: .2rem;
   cursor: pointer;
   text-align: center;
@@ -209,8 +209,21 @@ footer {
 
 .hero-image img {
   width: 100vw; 
-  height: auto;   
+  height: auto;
+  flex-shrink: 0;
  }
+
+ .hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+.fill img {
+  
+  min-width: 100%;
+  min-height: 100%
+}
 
  /*---- Products Page ----*/
  .product-name {
@@ -409,6 +422,8 @@ footer {
   padding-bottom: 10px;
 }
 
+
+
 /*--- Media Queries ---*/
 
 /*--- Medium ---*/
@@ -445,7 +460,7 @@ footer {
 
 @media (min-width: 992px) {
   main {
-    padding-top: 89.6px;
+    padding-top: 60px;
     margin-bottom: 210px;
   }
   .product-detail-name {
@@ -462,5 +477,11 @@ footer {
   }
   .bag-table td p {
     font-size: 17px;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
   }
 }
