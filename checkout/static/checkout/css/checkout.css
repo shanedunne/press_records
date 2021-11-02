@@ -1,7 +1,9 @@
 .StripeElement,
-.stripe-style-input {
+.stripe-style-input,
+.form-select {
   height: 40px;
-  padding: 10px 12px;border-bottom: 1px solid #F5F6F1;
+  padding: 10px 12px;
+  border-bottom: 1px solid #F5F6F1;
   border-top: 0px;
   border-right: 0px;
   border-left: 0px;
@@ -14,6 +16,10 @@
 .stripe-style-input:focus,
 .stripe-style-input:active {
   box-shadow: 0 1px 3px 0 #414833;
+}
+
+select {
+  border: 1px solid black !important;
 }
 
 .StripeElement--webkit-autofill {
