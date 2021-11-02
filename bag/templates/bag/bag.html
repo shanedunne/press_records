@@ -44,7 +44,7 @@
                             </p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0 d-none d-md-block"><strong>{{ item.product.name }}</strong> - {{ item.product.artist_name }}
+                            <p class="my-0 d-none d-md-block"><strong>{{ item.product.name }}</strong>{% if product.artist_name %} - {{ item.product.artist_name }}{% endif %}
                             </p>
                             <p class="my-0 small text-muted d-none d-md-block">SKU: {{ item.product.sku|upper }}</p>
                         </td>
