@@ -64,21 +64,21 @@
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <li class="dropdown-item">
-                      <a href="#" class="dropdown-item-account">Product Management</a>
+                      <a href="#">Product Management</a>
                     </li>
+                    {% endif %}
                     <li class="dropdown-item">
-                      {% endif %}
-                      <a href="{% url 'profile' %}" class="dropdown-item-account">My Account</a>
-                    </li class="dropdown-item">
+                      <a href="{% url 'profile' %}">My Account</a>
+                    </li>
                     <li  class="dropdown-item">
-                      <a href="#" class="dropdown-item-account">Logout</a>
+                      <a href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="dropdown-item">
-                      <a href="#" class="dropdown-item-account">Register</a>
+                      <a href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="dropdown-item">
-                      <a href="#" class="dropdown-item-account">Login</a>
+                      <a href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                   </ul>
@@ -91,21 +91,21 @@
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <li class="dropdown-item">
-                      <a href="#" class="dropdown-item-account">Product Management</a>
+                      <a href="#">Product Management</a>
+                    </li>
+                    {% endif %}
+                    <li class="dropdown-item">
+                      <a href="{% url 'profile' %}">My Account</a>
                     </li>
                     <li class="dropdown-item">
-                      {% endif %}
-                      <a href="{% url 'profile' %}" class="dropdown-item-account">My Account</a>
-                    </li>
-                    <li class="dropdown-item">
-                      <a href="#" class="dropdown-item-account">Logout</a>
+                      <a href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="dropdown-item">
-                      <a href="#" class="dropdown-item-account">Register</a>
+                      <a href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="dropdown-item">
-                      <a href="#" class="dropdown-item-account">Login</a>
+                      <a href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                   </ul>

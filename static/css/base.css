@@ -165,6 +165,10 @@ main {
   text-align: center;
 }
 
+.dropdown a:focus {
+  color: #fafafa;
+}
+
 .dropdown-item a {
   color: #fafafa;
   text-align: start;
@@ -176,7 +180,14 @@ main {
 .dropdown-item a:hover,
 .dropdown-item a:focus {
   color: #fafafa;
+  background-color: #414833;
   text-decoration: none;
+
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #414833;
 
 }
 
@@ -312,11 +323,10 @@ footer {
 
   .store-button-light:hover,
   .store-button-light:active {
-    color: #f5f6f1;
-    background: #414833;
-    border: .1rem solid #f5f6f1;
+    color: #414833;
+    background: #f5f6f1;
+    border: .1rem solid #414833;
     border-radius: 0px;
-    transition: 0.6s ease-in-out;
   }
 
 
@@ -437,6 +447,49 @@ footer {
   padding-bottom: 10px;
 }
 
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+  margin-top: 1.5rem; /* mt-4 */
+  color: #414833; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+  border-color: #000;
+  border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+  display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+  color: #414833;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+  /* btn */
+  color: #414833;
+  background: #f5f6f1;
+  border: .1rem solid #414833;
+  border-radius: 0px;
+
+  /* standard bootstrap btn transitions */
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {
+  color: #414833;
+  background: #f5f6f1;
+  border: .1rem solid #414833;
+  border-radius: 0px;
+}
+
+.allauth-form-inner-content a {
+color: #17a2b8; /* text-info */
+}
 
 
 /*--- Media Queries ---*/
