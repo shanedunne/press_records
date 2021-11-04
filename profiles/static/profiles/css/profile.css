@@ -14,3 +14,8 @@
 #id_default_country option:first-child {
     color: #C2C5AA;
 }
+
+.order-history {
+    max-height: 416px; /* height of profile form + submit button */
+    overflow-y: auto;
+}
