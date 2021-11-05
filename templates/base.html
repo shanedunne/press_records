@@ -78,6 +78,9 @@
                     <li class="dropdown-item">
                       <a href="{% url 'add_product' %}">Product Management</a>
                     </li>
+                    <li class="dropdown-item">
+                      <a href="{% url 'add_blog' %}">Blog Management</a>
+                    </li>
                     {% endif %}
                     <li class="dropdown-item">
                       <a href="{% url 'profile' %}">My Account</a>
@@ -104,6 +107,9 @@
                     {% if request.user.is_superuser %}
                     <li class="dropdown-item">
                       <a href="{% url 'add_product' %}">Product Management</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="{% url 'add_blog' %}">Blog Management</a>
                     </li>
                     {% endif %}
                     <li class="dropdown-item">
