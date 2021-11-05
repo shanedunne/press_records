@@ -7,7 +7,8 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="category-header">Record Reviews</h2>
-                <p>Take a look through some of our latest Press Record Reviews to see if anything sapikes your interest! Here we will discuss our favourite records, new and old</p>
+                <p>Take a look through some of our latest Press Record Reviews to see if anything spikes your interest!
+                     Here we will discuss our favourite records, new and old plus other music related topics</p>
                 <hr class="w-50 mb-1 mx-auto">
         </div>
     </div>
@@ -19,7 +20,7 @@
                 <div class="row">
                     {% for blog in blogs %}
                         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="card blog-card h-100 border-0">
+                            <div class="card blog-card h-100 border-0 pb-3">
                                 {% if blog.image %}
                                 <a href="{% url 'blog_post' blog.id %}">
                                     <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
