@@ -40,7 +40,9 @@ def add_blog(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
-            blog = form.save()
+            blog = form.save(commit=False)
+            blog.author = request.user
+            blog.save()
             messages.success(request, 'Successfully added a blog post!')
             return redirect(reverse('blog_post', args=[blog.id]))
         else:
