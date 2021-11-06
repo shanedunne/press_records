@@ -32,7 +32,14 @@
                                 {% endif %}
                                 <div class="card-body pb-1">
                                     <p class="mb-0 product-name"><strong>{{ blog.title }}</strong></p>
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                    <a href="{% url 'edit_blog' blog.id %}">Edit</a>
+                                    <a class="text-danger" href="#">Delete</a>
+                                </small>
+                                {% endif %}
                                 </div>
+                                
                             </div>
                         </div>
                     {% endfor %}

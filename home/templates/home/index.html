@@ -17,6 +17,7 @@
 <section class="pt-5 pb-5">
     <div class="container">
         <div class="row">
+            <h2 class="float-middle">This Weeks Features</h2>
             <div class="col-6">
                 <h3 class="mb-3">Carousel cards title </h3>
             </div>
@@ -30,7 +31,6 @@
             </div>
             <div class="col-12">
                 <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
@@ -64,13 +64,6 @@
                                                         5</small>
                                                     {% else %}
                                                     <small class="text-muted">No Rating</small>
-                                                    {% endif %}
-                                                    {% if request.user.is_superuser %}
-                                                    <small class="ml-3">
-                                                        <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                                        <a class="text-danger"
-                                                            href="{% url 'delete_product' product.id %}">Delete</a>
-                                                    </small>
                                                     {% endif %}
                                                 </div>
                                             </div>

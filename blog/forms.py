@@ -16,3 +16,4 @@ class BlogForm(forms.ModelForm):
 
         self.fields['title'].widget.attrs['placeholder'] = 'Blog Title'
         self.fields['content'].widget.attrs['placeholder'] = 'Blog Content'
+        self.fields['content'].widget.attrs['id'] = 'addBlogPost'
