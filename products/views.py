@@ -138,3 +138,15 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def artists(request, artist_id):
+    """ A view to show all records by a particular artist """
+
+    artists = Artist.get_object_or_404(Artist, pk=artist_id)
+
+    context = {
+        'artists': artists,
+    }
+
+    return render(request, 'products/artists.html', context)
