@@ -91,7 +91,7 @@ def edit_blog(request, blog_id):
 def delete_blog(request, blog_id):
     """ Delete a blog """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only authorised users can delete blogd.')
+        messages.error(request, 'Sorry, only authorised users can delete blogs.')
         return redirect(reverse('all_blogs'))
     
     blog = get_object_or_404(Blog, pk=blog_id)

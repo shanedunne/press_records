@@ -22,6 +22,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     artist_name = models.CharField(max_length=254, null=True, blank=True)
+    artist_link = models.ForeignKey('Artist', null=True, blank=True, on_delete=models.SET_NULL)
     description = models.TextField()
     track_list = models.TextField(null=True, blank=True)
     genre = models.ForeignKey('Genre', null=True, blank=True, on_delete=models.SET_NULL)
@@ -44,3 +45,10 @@ class Genre(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
+
+class Artist(models.Model):
+    name = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self.name
+
