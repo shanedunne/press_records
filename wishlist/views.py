@@ -9,11 +9,17 @@ def wishlist(request):
     """
     A view to return a users wishlist
     """
-    return render(request, 'wishlist/wishlist.html')
+    wishlist = get_object_or_404(Wishlist, user=request.user)
+
+    context = {
+        'wishlist': wishlist,
+    }
+
+    return render(request, 'wishlist/wishlist.html', context)
 
 
 def add_to_wishlist(request, product_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """ Add product to wishlist """
 
     wishlist = get_object_or_404(Wishlist, user=request.user)
     product = get_object_or_404(Product, pk=product_id)
