@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'blog',
+    'wishlist',
     'crispy_forms',
     'crispy_bootstrap5',
     'tinymce',
