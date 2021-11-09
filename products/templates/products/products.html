@@ -62,7 +62,7 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0 product-name"><strong>{{ product.name }}</strong>{% if product.artist_name %} - {{ product.artist_name }}{% endif %}</p>
+                                    <p class="mb-0 product-name"><strong>{{ product.name }} - </strong><a href="{% url 'artists' %}?artist={{ product.artist_name }}">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a></p>
                                 </div>
                                 <div class="card-footer pt-0 border-0 text-left">
                                     <div class="row">

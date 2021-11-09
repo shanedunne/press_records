@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, Artist
 from .forms import ProductForm
 
 # Create your views here.
@@ -143,7 +143,8 @@ def delete_product(request, product_id):
 def artists(request, artist_id):
     """ A view to show all records by a particular artist """
 
-    artists = Artist.get_object_or_404(Artist, pk=artist_id)
+    artists = Artist.objects.all(Artist, artist_id)
+    
 
     context = {
         'artists': artists,

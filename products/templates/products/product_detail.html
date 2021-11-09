@@ -29,7 +29,7 @@
             <div class="product-details-container mb-5 mt-md-5">
                 <p class="mb-0 product-detail-name">{{ product.name }}</p>
                 {% if product.artist_name %}
-                <p class="mb-0 product-detail-artist">{{ product.artist_name }}</p>
+                <p class="mb-0 product-name"><strong>{{ product.name }} - </strong><a href="{% url 'artists' %}?artist={{ product.artist_name }}">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a></p>
                 {% endif %}
                 {% if product.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>

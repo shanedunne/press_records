@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mb-2 mt-3">
+    <div class="row">
+        <div class="col">
+            <h2 class="logo-font mb-4">Wishlist</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% if wishlist_items %}
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless bag-table">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col" class="bag-head">Product Info</th>
+                            <th scope="col" class="bag-head"></th>
+                            <th scope="col" class="bag-head">Price</th>
+                            <th scope="col" class="bag-head"></th>
+                        </tr>
+                    </thead>
+
+                    {% for item in wishlist_items %}
+                    <tr>
+                        <td class="py-3 w-25">
+                            {% if item.product.image %}
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product_name }}">
+                            {% else %}
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product_name }}">
+                            {% endif %}
+                            <p class="my-0 mt-2 d-md-none"><strong>{{ item.product.name }}</strong> - {{ item.product.artist_name }}
+                            </p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0 d-none d-md-block"><strong>{{ item.product.name }}</strong>{% if product.artist_name %} - {{ item.product.artist_name }}{% endif %}
+                            </p>
+                            <p class="my-0 small text-muted d-none d-md-block">SKU: {{ item.product.sku|upper }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">€{{ item.product.price }}</p>
+                        </td>
+                        <td class="py-3">
+                            <button type="button" class="btn-close remove-item d-none d-sm-block" aria-label="Close" id="remove_{{ item.item_id }}"></button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="text-end">
+                            <a href="{% url 'products' %}" class="btn store-button store-button-light btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <a href="{% url 'checkout' %}" class="btn store-button store-button-dark btn-lg">
+                                <span class="text-uppercase">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% else %}
+            <p class="lead mb-5">You have nothing in your Wishlist</p>
+            <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+
+{{ block.super }}
+{% include 'products/includes/quantity_selector.html' %}
+
+<script type="text/javascript">
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
+
+{% endblock %}
