@@ -27,10 +27,11 @@
                 <table class="table table-sm table-borderless bag-table">
                     <thead class="text-black">
                         <tr>
-                            <th scope="col" class="bag-head">Product Info</th>
-                            <th scope="col" class="bag-head"></th>
-                            <th scope="col" class="bag-head">Price</th>
-                            <th scope="col" class="bag-head"></th>
+                            <th scope="col" class="wishlist-head">Product Info</th>
+                            <th scope="col" class="wishlist-head"></th>
+                            <th scope="col" class="wishlist-head">Price</th>
+                            <th scope="col" class="wishlist-head"></th>
+                            <th scope="col" class="wishlist-head"></th>
                         </tr>
                     </thead>
 
@@ -52,6 +53,13 @@
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ item.product.price }}</p>
+                        </td>
+                        <td class="py-3">
+                            <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                {% csrf_token %}
+                            <button type="submit" class="btn btn-lg store-button store-button-dark mt-3"><i
+                                class="fas fa-shopping-bag"></i> Add To Bag</button>
+                            </form>
                         </td>
                         <td class="py-3">
                             <button type="button" class="btn-close remove-item d-none d-sm-block" aria-label="Close" id="remove_{{ item.item_id }}"></button>

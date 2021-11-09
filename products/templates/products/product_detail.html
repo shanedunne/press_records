@@ -29,7 +29,7 @@
             <div class="product-details-container mb-5 mt-md-5">
                 <p class="mb-0 product-detail-name">{{ product.name }}</p>
                 {% if product.artist_name %}
-                <p class="mb-0 product-name"><strong>{{ product.name }} - </strong><a href="{% url 'artists' %}?artist={{ product.artist_name }}">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a></p>
+                <p class="mb-0 product-name"><a href="{% url 'artists' %}?artist={{ product.artist_name }}">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a></p>
                 {% endif %}
                 {% if product.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
@@ -81,6 +81,21 @@
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
+                {% if request.user.is_authenticated %}
+                    {% if product in wishlist_items %}
+                        <a href="#">
+                            <span class="wishlist-button">
+                                <i class="fas fa-heart"></i>
+                            </span>
+                        </a>
+                    {% else %}
+                    <a href="{% url 'add_to_wishlist' product.id %}">
+                        <span class="wishlist-button">
+                            <i class="far fa-heart"></i>
+                        </span>
+                    </a>
+                    {% endif %}
+                {% endif %}
 
                 <p class="mt-3">{{ product.description }}</p>
 

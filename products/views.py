@@ -151,3 +151,5 @@ def artists(request, artist_id):
     }
 
     return render(request, 'products/artists.html', context)
+
+

@@ -10,3 +10,5 @@ This helped fix the blog posting - https://stackoverflow.com/questions/49714966/
 This is for TinyMCE to achieve WYSIWYG - https://django-tinymce.readthedocs.io/en/latest/installation.html#prerequisites
 
 Error on changing artist to foreign key - https://stackoverflow.com/questions/35999186/change-type-of-django-model-field-from-charfield-to-foreignkey
+
+Wishlist tutorial https://www.youtube.com/watch?v=OgA0TTKAtqQ
