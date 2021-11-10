@@ -25,77 +25,11 @@
     </div>
 </div>
 
-<!--<section class="pt-5 pb-5">
-    <div class="container">
-        <div class="row">
-            <h2 class="float-middle">This Weeks Features</h2>
-            <div class="col-6">
-                <h3 class="mb-3">Carousel cards title </h3>
-            </div>
-            <div class="col-6 text-right">
-                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                    <i class="fa fa-arrow-left"></i>
-                </a>
-                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                    <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-12">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                {% for product in is_feature %}
-                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                    <div class="card product-card h-100 border-0">
-                                        {% if product.image %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="card-img-top img-fluid" src="{{ product.image.url }}"
-                                                alt="{{ product.name }}">
-                                        </a>
-                                        {% else %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                                alt="{{ product.name }}">
-                                        </a>
-                                        {% endif %}
-                                        <div class="card-body pb-0">
-                                            <p class="mb-0 product-name">
-                                                <strong>{{ product.name }}</strong>{% if product.artist_name %} -
-                                                {{ product.artist_name }}{% endif %}</p>
-                                        </div>
-                                        <div class="card-footer pt-0 border-0 text-left">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}
-                                                    </p>
-                                                    {% if product.rating %}
-                                                    <small class="text-muted"><i
-                                                            class="fas fa-star mr-1"></i>{{ product.rating }} /
-                                                        5</small>
-                                                    {% else %}
-                                                    <small class="text-muted">No Rating</small>
-                                                    {% endif %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 
 <div class="container-fluid my-5">
     <h3 class="text-center display-4 mb-5">This Week's Featured Records</h3>
     <div class="row">
-        <div class="col-10 m-auto">
+        <div class="col-lg-10 col-md-12 m-auto">
             <div class="owl-carousel owl-theme">
                 {% for product in is_feature %}
                 <div class="item mb-4">
@@ -111,21 +45,15 @@
                         </a>
                         {% endif %}
                         <div class="card-body-home pb-0">
-                            <p class="mb-0 product-name text-truncate ps-2">
+                            <p class="mb-0 product-name text-truncate ps-2 text-center">
                                 <strong>{{ product.name }}</strong>{% if product.artist_name %} -
                                 {{ product.artist_name }}{% endif %}</p>
                         </div>
-                        <div class="card-footer pt-0 border-0 text-left">
+                        <div class="card-footer pt-0 border-0 text-center">
                             <div class="row">
-                                <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}
+                                <div class="col g-0 ps-1">
+                                    <p class="lead mb-0 text-left font-weight-bold price-card-home">€{{ product.price }}
                                     </p>
-                                    {% if product.rating %}
-                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                                        5</small>
-                                    {% else %}
-                                    <small class="text-muted">No Rating</small>
-                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -134,6 +62,32 @@
                 {% endfor %}
 
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid category-container">
+    <div class="row g-0">
+        <div class="col">
+            <h3 class="text-center display-4 my-3">Shop by Category</h3>
+        </div>
+    </div>
+    <div class="row g-0">
+        <div class="col-lg-4 col-md-6 col-sm-12 category-image-div mb-5">
+            <a href="{% url 'products' %}?category=Speakers">
+                <img class="category-image" src="{{ MEDIA_URL }}speaker_category.png" alt="">
+            </a>
+            <div class="speakers-text">Speakers</div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 category-image-div mb-5">
+            <a href="{% url 'products' %}?category=Vinyls">
+                <img class="category-image" src="{{ MEDIA_URL }}vinyl_category.png" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 category-image-div mb-5">
+            <a href="{% url 'products' %}?category=Turntables">
+                <img class="category-image" src="{{ MEDIA_URL }}record_player_category.png" alt="">
+            </a>
         </div>
     </div>
 </div>
@@ -148,15 +102,17 @@
         loop: true,
         margin: 15,
         nav: true,
+        autoplay: true,
+        autoplayHoverPause: true,
         responsive: {
             0: {
-                items: 1
-            },
-            600: {
                 items: 2
             },
-            1000: {
+            600: {
                 items: 3
+            },
+            1000: {
+                items: 4
             }
         }
     })
