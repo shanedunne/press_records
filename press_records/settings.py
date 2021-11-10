@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'profiles',
     'blog',
     'wishlist',
-    'mailing_list',
     'crispy_forms',
     'crispy_bootstrap5',
     'tinymce',

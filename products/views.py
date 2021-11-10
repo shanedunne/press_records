@@ -143,7 +143,7 @@ def delete_product(request, product_id):
 def artists(request, artist_id):
     """ A view to show all records by a particular artist """
 
-    artists = Artist.objects.all(Artist, artist_id)
+    artists = get_object_or_404(Artist, artist_id)
     
 
     context = {

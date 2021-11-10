@@ -42,7 +42,22 @@
                             <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>
                     {% endif %}
-                <p class="lead mb-0 mt-3 text-left product-detail-price">€{{ product.price }}</p>
+                <span><p class="lead mb-0 mt-3 text-left product-detail-price">€{{ product.price }}</p></span>
+                <span>{% if request.user.is_authenticated %}
+                    {% if product in wishlist_items %}
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                            <span class="wishlist-button">
+                                <i class="fas fa-heart"></i>
+                            </span>
+                        </a>
+                    {% else %}
+                    <a href="{% url 'add_to_wishlist' product.id %}">
+                        <span class="wishlist-button">
+                            <i class="far fa-heart"></i>
+                        </span>
+                    </a>
+                    {% endif %}
+                {% endif %}</span>
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -81,21 +96,7 @@
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
-                {% if request.user.is_authenticated %}
-                    {% if product in wishlist_items %}
-                        <a href="#">
-                            <span class="wishlist-button">
-                                <i class="fas fa-heart"></i>
-                            </span>
-                        </a>
-                    {% else %}
-                    <a href="{% url 'add_to_wishlist' product.id %}">
-                        <span class="wishlist-button">
-                            <i class="far fa-heart"></i>
-                        </span>
-                    </a>
-                    {% endif %}
-                {% endif %}
+                
 
                 <p class="mt-3">{{ product.description }}</p>
 

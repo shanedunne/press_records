@@ -27,7 +27,6 @@ def add_to_wishlist(request, product_id):
     if product not in wishlist.products.all():
         wishlist.products.add(product)
         messages.success(request, f"{product.name} has been added to your wishlist")
-        return HttpResponse(status=200)
     else:
         messages.error(request, 'Error adding product to wishlist')
-    return redirect(reverse("products", args=[product_id]))
+    return redirect(reverse("product_detail", args=[product_id]))

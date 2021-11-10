@@ -251,6 +251,12 @@ footer {
   min-height: 100%
 }
 
+/*--- Featured Carousel ---*/
+
+.card-body-home p {
+  font-size: 14px;
+}
+
  /*---- Products Page ----*/
  .product-name {
    font-size: 22px;
@@ -518,6 +524,51 @@ color: #17a2b8; /* text-info */
   border-radius: 0;
 }
 
+/* setup tooltips */
+.tooltip {
+  position: relative;
+}
+.tooltip:before,
+.tooltip:after {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+.tooltip:after {
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(0,0,0,.75); 
+  border-left: 6px solid transparent;
+  content: '';
+  height: 0;
+    top: 20px;
+    left: 20px;
+  width: 0;
+}
+.tooltip:before {
+  background: rgba(0,0,0,.75);
+  border-radius: 2px;
+  color: #fff;
+  content: attr(data-title);
+  font-size: 14px;
+  padding: 6px 10px;
+    top: 26px;
+  white-space: nowrap;
+}
+
+/* the animations */
+/* fade */
+.tooltip.fade:after,
+.tooltip.fade:before {
+  transform: translate3d(0,-10px,0);
+  transition: all .15s ease-in-out;
+}
+.tooltip.fade:hover:after,
+.tooltip.fade:hover:before {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+
 /*--- Media Queries ---*/
 
 /*--- Medium ---*/
@@ -546,6 +597,10 @@ color: #17a2b8; /* text-info */
   .buttons-added {
     padding: 7px 10px 8px;
     height: 41px;
+  }
+
+  .card-body-home p {
+    font-size: 16px;
   }
  
 }
@@ -582,5 +637,9 @@ color: #17a2b8; /* text-info */
   .dropdown-item a {
     font-size: 14px;
   
+  }
+
+  .card-body-home p {
+    font-size: 19px;
   }
 }
