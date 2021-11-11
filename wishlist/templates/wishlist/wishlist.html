@@ -83,12 +83,16 @@
             </div>
             {% else %}
             <p class="lead mb-5">You have nothing in your Wishlist</p>
-            <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="text-uppercase">Keep Shopping</span>
-            </a>
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'products' %}" class="btn store-button store-button-light btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                </div>
+            </div>
             {% endif %}
         </div>
     </div>
