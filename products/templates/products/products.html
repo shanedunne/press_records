@@ -6,16 +6,27 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                {% if current_categories is None %}
-                <h2 class="category-header">All Products</h2>
-                {% endif %}
-                {% for c in current_categories %}
-                {% if current_categories is None %}
+                {% if current_artists is None %}
+                    {% if current_categories is None %}
+                        <h2 class="category-header">All Products</h2>
+                    {% endif %}
+                    {% for c in current_categories %}
+                        {% if current_categories is None %}
+                            <h2 class="category-header">All Products</h2>
+                        {% else %}
+                            <h2 class="category-header">{{ c.friendly_name }}</h2>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                {% for a in current_artists %}
+                {% if current_artists is None %}
                     <h2 class="category-header">All Products</h2>
                 {% else %}
-                    <h2 class="category-header">{{ c.friendly_name }}</h2>
+                    <h2 class="category-header">{{ a.name }}</h2>
                 {% endif %}
             {% endfor %}
+            {% endif %}
+
                 <hr class="w-50 mb-1 mx-auto">
         </div>
     </div>
