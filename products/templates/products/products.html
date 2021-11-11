@@ -32,10 +32,7 @@
                             <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                             <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                             <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                            {% if Category == 'Vinyl' %}
-                                <option value="artist_name_asc" {% if current_sorting == 'artist_name_asc' %}selected{% endif %}>Artist (A-Z)</option>
-                                <option value="artist_name_desc" {% if current_sorting == 'artist_name_desc' %}selected{% endif %}>Artist (Z-A)</option>
-                            {% endif %}
+                            
                         </select>
                     </div>
                 </div>
@@ -62,7 +59,7 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0 product-name"><strong>{{ product.name }} - </strong><a href="{% url 'artists' artist.id %}">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a></p>
+                                    <p class="mb-0 product-name"><strong>{{ product.name }} - </strong><a href="{% url 'products' %}?artist_name={{ product.artist_name }}" class="product-artist">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a></p>
                                 </div>
                                 <div class="card-footer pt-0 border-0 text-left">
                                     <div class="row">

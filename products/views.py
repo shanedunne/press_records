@@ -17,8 +17,16 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    artists = None
 
     if request.GET:
+        if 'artist_name' in request.GET:
+            
+            artists = request.GET['artist_name'].split(',')
+            products = products.filter(artist_name__name__in=artists)
+            artists = Artist.objects.filter(name__in=artists)
+
+
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -55,6 +63,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'current_artists': artists,
     }
 
     return render(request, 'products/products.html', context)
@@ -140,16 +149,6 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
-def artists(request, artist_id):
-    """ A view to show all records by a particular artist """
 
-    artist = get_object_or_404(Artist, pk=artist_id)
-    
-
-    context = {
-        'artist': artist,
-    }
-
-    return render(request, 'products/artists.html', context)
 
 
