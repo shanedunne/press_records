@@ -52,12 +52,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-5">
-                                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                                            <button type="submit" class="btn btn-lg store-button store-button-light mt-3">Remove</button>
-                                        </form>
+                                        <a href="{% url 'delete_wishlist_item' product.id %}" class="btn store-button store-button-light">
+                                            <span class="text-uppercase">Remove Item</span>
+                                        </a>
                                     </div>
                                     <div class="col-lg-7">
-                                        <form class="form" action="#" method="POST">
+                                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                            {% csrf_token %}
                                             <button type="submit" class="btn btn-lg store-button store-button-dark mt-3">Add To Bag</button>
                                         </form>
                                     </div>

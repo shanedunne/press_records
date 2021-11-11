@@ -143,11 +143,11 @@ def delete_product(request, product_id):
 def artists(request, artist_id):
     """ A view to show all records by a particular artist """
 
-    name = get_object_or_404(Artist, artist_id)
+    artist = get_object_or_404(Artist, pk=artist_id)
     
 
     context = {
-        'name': name,
+        'artist': artist,
     }
 
     return render(request, 'products/artists.html', context)

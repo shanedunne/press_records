@@ -46,6 +46,7 @@ class Genre(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
+
 class Artist(models.Model):
     name = models.CharField(max_length=254)
 
