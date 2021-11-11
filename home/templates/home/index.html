@@ -25,12 +25,27 @@
     </div>
 </div>
 
+<div class="container mt-3 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-1- col-md-10 text-center">
+            <p class="welcome-message">Welcome to Press Records. We sell a curated selection of the best music on vinyl record, along with the best HI-FI can offer today in speakers and turntables. We add to our discography daily so keep an eye onour site.</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col text-center my-4">
+            <a href="{% url 'products' %}" class="btn welcome-button store-button-light btn-lg">
+                <span class="text-uppercase">Start Shopping</span>
+            </a>
+        </div>
+    </div>
+</div>
+
 
 <div class="container-fluid my-5">
     <h3 class="text-center display-4 mb-5">This Week's Featured Records</h3>
     <div class="row">
         <div class="col-lg-10 col-md-12 m-auto">
-            <div class="owl-carousel owl-theme">
+            <div class="owl-one owl-carousel owl-theme">
                 {% for product in is_feature %}
                 <div class="item mb-4">
                     <div class="card border-0 shadow">
@@ -77,7 +92,6 @@
             <a href="{% url 'products' %}?category=Speakers">
                 <img class="category-image" src="{{ MEDIA_URL }}speaker_category.png" alt="">
             </a>
-            <div class="speakers-text">Speakers</div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 category-image-div mb-5">
             <a href="{% url 'products' %}?category=Vinyls">
@@ -92,13 +106,72 @@
     </div>
 </div>
 
+<div class="container-fluid my-5">
+    <h3 class="text-center display-5 mb-5">HI-FI Deals</h3>
+    <div class="row">
+        <div class="col-lg-10 col-md-12 m-auto">
+            <div class="owl-two owl-carousel owl-theme">
+                {% for product in is_hifi_deal %}
+                <div class="item mb-4">
+                    <div class="card border-0 shadow">
+                        {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body-home pb-0">
+                            <p class="mb-0 product-name text-truncate ps-2 text-center">
+                                <strong>{{ product.name }}</p>
+                        </div>
+                        <div class="card-footer pt-0 border-0 text-center">
+                            <div class="row">
+                                <div class="col g-0 ps-1">
+                                    <p class="lead mb-0 text-left font-weight-bold price-card-home">€{{ product.price }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
 {% block postloadjs %}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
     crossorigin="anonymous"></script>
 <script>
-    $('.owl-carousel').owlCarousel({
+    $('.owl-one').owlCarousel({
+        loop: true,
+        margin: 15,
+        nav: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        lazyLoad: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
+
+    $('.owl-two').owlCarousel({
         loop: true,
         margin: 15,
         nav: true,

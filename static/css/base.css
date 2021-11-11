@@ -251,6 +251,11 @@ footer {
   min-height: 100%
 }
 
+.welcome-message {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
 /*--- Featured Carousel ---*/
 
 .card-body-home p {
@@ -327,6 +332,11 @@ footer {
   .store-button {
     font-size: 0.8rem;
     font-weight: 300;
+  }
+
+  .welcome-button {
+    font-size: 1.5em;
+    font-weight: 400;
   }
   
   
