@@ -34,7 +34,7 @@
     <div class="row justify-content-center">
         <div class="col text-center my-4">
             <a href="{% url 'products' %}" class="btn welcome-button store-button-light btn-lg">
-                <span class="text-uppercase">Start Shopping</span>
+                <span class="text-uppercase">Shop Now</span>
             </a>
         </div>
     </div>
@@ -88,20 +88,23 @@
         </div>
     </div>
     <div class="row g-0">
-        <div class="col-lg-4 col-md-6 col-sm-12 category-image-div mb-5">
+        <div class="col-lg-4 col-md-4 col-sm-12 category-image-div mb-5">
             <a href="{% url 'products' %}?category=Speakers">
                 <img class="category-image" src="{{ MEDIA_URL }}speaker_category.png" alt="">
             </a>
+            <h4 class="speaker-text">Speakers</h4>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 category-image-div mb-5">
+        <div class="col-lg-4 col-md-4 col-sm-12 category-image-div mb-5">
             <a href="{% url 'products' %}?category=Vinyls">
                 <img class="category-image" src="{{ MEDIA_URL }}vinyl_category.png" alt="">
             </a>
+            <h4 class="vinyl-text">Vinyls</h4>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 category-image-div mb-5">
+        <div class="col-lg-4 col-md-4 col-sm-12 category-image-div mb-5">
             <a href="{% url 'products' %}?category=Turntables">
-                <img class="category-image" src="{{ MEDIA_URL }}record_player_category.png" alt="">
+                <img class="category-image" src="{{ MEDIA_URL }}turntable_category.png" alt="">
             </a>
+            <h4 class="turntable-text">Turntables</h4>
         </div>
     </div>
 </div>

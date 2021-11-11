@@ -283,10 +283,41 @@ footer {
 .category-image {
   height: 350px;
   width: 350px;
+  filter: brightness(70%);
 }
 
 .speaker-text {
   position: absolute;
+  bottom: 20px;
+  color: #F5F6F1;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.vinyl-text {
+  position: absolute;
+  bottom: 20px;
+  color: #F5F6F1;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.turntable-text {
+  position: absolute;
+  bottom: 20px;
+  color: #F5F6F1;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.store-button {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.welcome-button {
+  font-size: 1.5em;
+  font-weight: 400;
 }
 
  /*---- Products Page ----*/
@@ -305,10 +336,7 @@ footer {
    font-size: 2.6em;
  }
 
- /*.product-card:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  transition: 0.7s;
-}*/
+ 
 
  /*---- Product Detail Page ---*/
 
@@ -329,15 +357,7 @@ footer {
     font-size: 24px;
   }
 
-  .store-button {
-    font-size: 0.8rem;
-    font-weight: 300;
-  }
-
-  .welcome-button {
-    font-size: 1.5em;
-    font-weight: 400;
-  }
+ 
   
   
 
@@ -613,7 +633,7 @@ color: #17a2b8; /* text-info */
 @media (min-width: 768px) {
 
   main {
-    padding-top: 105.6px;
+    padding-top: 85px;
     margin-bottom: 270px;
   }
   .category-header {
@@ -642,6 +662,18 @@ color: #17a2b8; /* text-info */
 
   .price-card-home {
     font-size: 16px;
+  }
+
+  .category-image {
+    height: 210px;
+    width: 210px;
+  }
+
+  .speaker-text,
+  .vinyl-text,
+  .turntable-text {
+    font-size: 20px;
+    font-weight: 400px;
   }
  
 }
@@ -686,5 +718,10 @@ color: #17a2b8; /* text-info */
 
   .price-card-home {
     font-size: 19px;
+  }
+
+  .category-image {
+    height: 450px;
+    width: 450px;
   }
 }
