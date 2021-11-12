@@ -23,7 +23,6 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     artist_name = models.ForeignKey('Artist', null=True, blank=True, on_delete=models.SET_NULL)
     description = models.TextField()
-    track_list = models.TextField(null=True, blank=True)
     genre = models.ForeignKey('Genre', null=True, blank=True, on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     is_feature = models.BooleanField(default=False, null=True, blank=True)
