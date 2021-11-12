@@ -1,0 +1,1 @@
+web: gunicorn press_records.wsgi:application
