@@ -1,3 +1,9 @@
+# Press Records
+![Project Across Devices](static/img/mockup.png)
+
+Press Records is an ecommerce store delivering a wide variety of vinyl records, speakers and turntables to music enthusiasts around the globe
+
+You can find a live link to the site [HERE](https://press-records.herokuapp.com/)
 ## Table of Contents:
 
 - [UX](#ux)
@@ -44,41 +50,37 @@
 ### Registered User Extra Functionality
 | User No. | As a... | I want to be able to... | So that I can... |
 |----|:--------|:------------------------|:-----------------|
-9| Registered User | Add product reviews | Voice my recomendations on a product |
-10| Registered User | Edit/Update my review | Edit review if mistakes shown or new information to add |
-11| Registered User | Delete my review | Delete my review if i do not want is shared any longer |
-12| Registered User | Add products to my wishlist | Somewhere i can save products i am interested in purchasing at a later date |
-13| Registered User | Transfer items from my wishlist to my shopping bag | Easy add to bag button from wishlist |
-14| Registered User | Remove items from my wishlist | Delete item if i no longer want or have aquired elsewhere |
+
+9| Registered User | Add products to my wishlist | Somewhere i can save products i am interested in purchasing at a later date |
+10| Registered User | Transfer items from my wishlist to my shopping bag | Easy add to bag button from wishlist |
+11| Registered User | Remove items from my wishlist | Delete item if i no longer want or have aquired elsewhere |
 
 ### Sorting and Searching
 | User No. | As a... | I want to be able to... | So that I can... |
 |----|:--------|:------------------------|:-----------------|
-15| Shopper | Sort/filter the list of available products | Find the products I want, by name, price or category |
-16| Shopper | Have seperation on product types | Only see certain product types on particular pages |
-17| Shopper | Search for a product by name or description | Find a specific product I'd like to purchase |
+12| Shopper | Sort/filter the list of available products | Find the products I want, by name, price or category |
+13| Shopper | Have seperation on product types | Only see certain product types on particular pages |
+14| Shopper | Search for a product by name or artist | Find a specific product I'd like to purchase |
 
-### Subscribers
-| User No. | As a... | I want to be able to... | So that I can... |
-|----|:--------|:------------------------|:-----------------|
-18| Subscriber | Join subscription service to receive new music every month | Add to music as a surprise to my collection |
-19| Subscribers | Narrow down possible vinyl sent by selection genre | Ensures the subscription vinyl sent is close to my interests |
 
 ### Purchasing and Checkout
 | User No. | As a... | I want to be able to... | So that I can... |
 |----|:--------|:------------------------|:-----------------|
-20| Shopper | Ability to update quantities in the shopping bag | Allow to add additional quantites of items or remove some |
-21| Shopper | Clearly see an order summary before checkout | Finl check on items and prices |
-22| Shopper | Easily enter my shipping and payment information | Seemless checkout experience |
-23| Shopper | See order confirmation post purchase | Verify that the purchase was a success |
-24| Shopper | Receive email confirmation | Double verification that the order was a success |
+15| Shopper | Ability to update quantities in the shopping bag | Allow to add additional quantites of items or remove some |
+16| Shopper | Clearly see an order summary before checkout | Finl check on items and prices |
+17| Shopper | Easily enter my shipping and payment information | Seemless checkout experience |
+18| Shopper | See order confirmation post purchase | Verify that the purchase was a success |
+19| Shopper | Receive email confirmation | Double verification that the order was a success |
 
 ### Store Owner or Product Manager
 | User No. | As a... | I want to be able to... | So that I can... |
 |----|:--------|:------------------------|:-----------------|
-25| Store Owner | Add a product | Add new products to my store |
-26| Store Owner | Edit and update a product | Easily change all product information |
-27| Store Owner | Delete a product | Remove items if no longer an option |
+20| Store Owner | Add a product | Add new products to my store |
+21| Store Owner | Edit and update a product | Easily change all product information |
+22| Store Owner | Delete a product | Remove items if no longer an option |
+23| Store Owner | Add a blog post | Add blog posts about items we sell |
+24| Store Owner | Edit and update a blog post | Easily change all blog information |
+25| Store Owner | Delete a blog | elete a blog if it is no longer relevant |
 
 ### Strategy
 - Provide a platform where users can find new music in vinyl form
@@ -99,25 +101,85 @@ The structure and layout of pages is very similar across the board and allows fo
 ### Skeleton
 - [Wireframes](readme-docs/wireframes/wireframes.pdf) - The final commit has not differed much from the initial intentions highlighted in the wireframes
 - Navigation Bar
-- - Home - Homepage containing call to action, blurb on purpose of site and a few featured articles
-- - Articles - Call to action to post article with articles below catagorised by topic on different tabs
-- - Post Article - Form to contribute an article including TinyMCE textarea
-- - Article - Article page displaying topic, image, author, date published and the article body with a comments section at the bottom
-- - Login - Simple login form requesting username and password. Link at bottom of form to register if not already
-- - Register - Simple register form requesting full name, email address, username and password. Link at bottom of form to login if already registered
-- - Profile - Contains all articles contributed by user with buttons to read, edit and delete articles. Delete articles propmts a modal to make sure the user wants to delete
-- - Edit - Allows user to edit article with pre-populated fields containing original article
--
-#### Database Diagram
-![Project Across Devices](static/docs/database-diagram.png)
+- - My Account - Gives non logged in users the ability to login or register. Gives logged in users access to their account and to logout. Gives store admins the access to add products and blogs
+- - Shopping Bag - Takes users to their shopping bags
+- Side Bar Navigation
+- - Search functionality to search product names and artist names
+- - Home - Takes user to the home page
+- - Shop - Dropdown with product category links
+- - Blog - My Account - Takes user to their account
+- - Contact Us - Takes user to contact us page
+- - Social Media Links - Directs users to Press Records social media sites
 
 ### Surface
-The intention for the design was to keep everything simple and not take away from the content
+The intention for the design was to keep everything simple and not take away from the content.
 #### Colours
-The base colour was kept as white #fafafa with #545454 used for most fonts. There is some colour added on buttons but generally the main colour on the site comes from the images throughout which are supposed to represent blockchain related tech and imagery
+The colours used through out the site come from the palet below. I wanted to pick one theme colour and runs with complementary colours to keep things simple and elegent
+
+![Colours](readme-docs/colours/colours.png)
 #### Fonts
-I used the proxima-nova font with 300 weighting and sans-serif as backup
+I used the Roberto font with 300 weighting and sans-serif as backup
+
+## Features
+### Deployed Features
+- Collapsable navigation bar from Bootstrap
+- Call to actions to Shop Now on the home page
+- Featured products on the home page
+- HI-FI Deals on the home page
+- Shop by category options
+- View all records by a particular artist
+- Search product and artist name functionality
+- Add, edit and delete functionality for the store admin on products and blogs
+- Register, Login and Logout functionality
+- Full purchasing functionality through Stripe
+- A Wishlist for saving products to your account
+- Ability to save shipping details in user account
+- Ability to view past orders
+
+### Features to consider implementing in the future
+- Review section on products
+
+## Technologies Used
+
+### Languages
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>)
+
+### Frameworks and Tools
+
+- [FontAwesome](https://fontawesome.com/) - Used for icons
+- [MDBootstrap](https://mdbootstrap.com/) - CSS framework
+- [jQuery](https://jquery.com/) - JavaScript library.
+- [Django](https://en.wikipedia.org/wiki/Django_(web_framework) - Python framework for building web applications
+- [MongoDB](https://www.mongodb.com/) - NoSQL database program, using JSON-like documents.
+- [ImageKit](https://imagekit.io/) - Used to host images for display on site
+- - ImageKit enables automatic optimisation and real time transformation to resize images depending on the screen size in use
+
+### Workspace and Related Tools
+- [Gitpod](https://www.gitpod.io/) - Integrated Development Environment used to write the code
+- [GitHub](https://github.com/) - Repository hosting service
+- [Git](https://git-scm.com/) - Version control tool to manage any changes and allow to revert to previous version
+- [Heroku](https://www.heroku.com/) - Cloud based platform for hosting web applications feeding straight from the GitHub repository
+
+## Resources
+- [Stack Overflow](https://stackoverflow.com/) - Educational resource
+- [Youtube](https://www.youtube.com/) - Tutorial resource
+- [Balsamiq](https://balsamiq.com/wireframes/) - Used to generate Wireframes
+- [W3Schools](https://www.w3schools.com/js/default.asp) - Used to check up on methods etc.
+- [Quick DBD](https://www.quickdatabasediagrams.com/) - Database diagram visualisation tool
+- [Coolors](https://coolors.co/) - Help find suitable complimentary colours for the site
+
+## Code Validation Tools
+- [WC3 HTML Validator](https://validator.w3.org/) - Used to test HTML code
+- [WC3 CSS Validator](https://jigsaw.w3.org/css-validator/) - Used to test CSS code
+- [JS Hint](https://jshint.com/) - Used to test JavaScript
+- [PEP8 online](http://pep8online.com/) - Used to test Python code was written to PEP8 standards
 
 
-## User Stories
+
+
+
+
 
