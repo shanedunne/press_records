@@ -25,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+
+
 
 ALLOWED_HOSTS = ['press-records.herokuapp.com', 'localhost']
 
@@ -198,6 +199,7 @@ STANDARD_SHIPPING_PERCENTAGE = 10
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
 if 'USE_AWS' in os.environ:
     
     # Cache control
@@ -222,6 +224,8 @@ if 'USE_AWS' in os.environ:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
 
 # Stripe
 FREE_SHIPPING_THRESHOLD = 40
