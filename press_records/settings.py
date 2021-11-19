@@ -241,3 +241,7 @@ DEFAULT_FROM_EMAIL = 'pressrecords@example.com'
 
 # TinyMCE
 TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, "path/to/tiny_mce")
+
+# Social Account Login
+
+
