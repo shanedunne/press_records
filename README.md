@@ -13,6 +13,7 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
   - [Structure](#structure)
   - [Skeleton](#skeleton)
   - [Surface](#surface)
+- [Database Structure](#database-structure)
 - [Features](#features)
   - [Deployed Features](#deployed-features)
   - [Features to consider implementing in the future](#features-to-consider-implementing-in-the-future)
@@ -120,6 +121,26 @@ The colours used through out the site come from the palet below. I wanted to pic
 #### Fonts
 I used the Roberto font with 300 weighting and sans-serif as backup
 
+## Database Structure
+### Models
+
+- Profile/Users
+- - User - User information from Allauth including username, name, email address, password
+- - Profile - Contains the users information for orders and addresses etc
+<br>
+- Products
+- - Category - Model containing categories
+- - Product - Contains all relevant information for a product
+- - Genre - Model to signify genre of a record
+- - Artist - This model holds all artists whos vinyls Press Records sells.
+- Wishlist
+- - Wishlist - This model stores information on what products are in users wishlists
+- Orders
+- - Order - Model to contain all order information from products to price and shipping addresses
+- - OrderLineItem - Each product creates an orderlineitem in the bag
+- Blog
+- - Blog - Contains all information for each blog post
+
 ## Features
 ### Deployed Features
 - Collapsable navigation bar from Bootstrap
@@ -138,6 +159,7 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 
 ### Features to consider implementing in the future
 - Review section on products
+- I have set up a Genre model and genres are recorded for all vinyls. In the future i wouls like to set up functionality to be able to view all vinyls from a particular genre
 
 ## Technologies Used
 
