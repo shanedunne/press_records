@@ -31,11 +31,6 @@
                 {% if product.artist_name %}
                 <p class="mb-0"><a href="{% url 'products' %}?artist_name={{ product.artist_name }}" class="product-detail-artist">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a></p>
                 {% endif %}
-                {% if product.rating %}
-                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                {% else %}
-                <small class="text-muted">No Rating</small>
-                {% endif %}
                 {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_product' product.id %}">Edit</a> | 
@@ -45,13 +40,13 @@
                 <span><p class="lead mb-0 mt-3 text-left product-detail-price">€{{ product.price }}</p></span>
                 <span>{% if request.user.is_authenticated %}
                     {% if product in wishlist_items %}
-                        <a href="#" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                        <a href="#">
                             <span class="wishlist-button">
                                 <i class="fas fa-heart"></i>
                             </span>
                         </a>
                     {% else %}
-                    <a href="{% url 'add_to_wishlist' product.id %}">
+                    <a href="{% url 'add_to_wishlist' product.id %}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist">
                         <span class="wishlist-button">
                             <i class="far fa-heart"></i>
                         </span>

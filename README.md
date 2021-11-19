@@ -37,7 +37,7 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
 |----|:--------|:------------------------|:-----------------|
 1| Shopper| View a list of products available | Browse and select items to purchase |
 2| Shopper | View individual product details | View specific product information |
-3| Shopper | Easily see featured items and promotions | Make sure not to miss out on promotions |
+3| Shopper | Easily see featured items and promotions | Make sure not to miss out on deals |
 4| Shopper | Save products for purchase later | Add products to a wishlist for future purchasing |
 
 ### Registration and User Accounts
