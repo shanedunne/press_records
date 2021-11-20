@@ -24,7 +24,6 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     artist_name = models.ForeignKey('Artist', null=True,
                                     blank=True, on_delete=models.SET_NULL)
-    artist_display_name = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField()
     genre = models.ForeignKey('Genre', null=True, blank=True,
                               on_delete=models.SET_NULL)

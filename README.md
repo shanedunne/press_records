@@ -160,6 +160,7 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 ### Features to consider implementing in the future
 - Review section on products
 - I have set up a Genre model and genres are recorded for all vinyls. In the future i wouls like to set up functionality to be able to view all vinyls from a particular genre
+- Integrate a WYSIWYG editor directly into the blog management to not have to direct an author towards the django admin for blog post entries
 
 ## Technologies Used
 
