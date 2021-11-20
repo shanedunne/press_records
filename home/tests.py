@@ -1,12 +1,12 @@
 from django.test import TestCase
 from django.urls import reverse
 
+
 class TestHomePage(TestCase):
 
     def setUp(self):
 
         self.home = reverse('home')
-    
 
     def test_homepage_view(self):
         """

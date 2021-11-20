@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 from checkout.models import Order
 
+
 class TestUserProfileViews(TestCase):
 
     def setUp(self):
@@ -13,7 +14,6 @@ class TestUserProfileViews(TestCase):
             password='testpassword'
         )
         self.profile = reverse('profile')
-    
 
     def test_get_profile_view(self):
         """
@@ -24,7 +24,6 @@ class TestUserProfileViews(TestCase):
         response = self.client.get(self.profile)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'profiles/profile.html')
-    
 
     def test_get_order_history(self):
         """
@@ -34,7 +33,7 @@ class TestUserProfileViews(TestCase):
             username="testuser", password="testpassword")
         user_profile = UserProfile.objects.get(user=self.user)
         order = Order.objects.create(user_profile=user_profile)
-        response = self.client.get(reverse('order_history', 
-                                    kwargs={"order_number": order.order_number}))
+        response = self.client.get(reverse('order_history',
+                                   kwargs={"order_number": order.order_number}))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'checkout/checkout_success.html')

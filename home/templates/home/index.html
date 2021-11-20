@@ -28,7 +28,9 @@
 <div class="container mt-3 mb-5">
     <div class="row justify-content-center">
         <div class="col-lg-1- col-md-10 text-center">
-            <p class="welcome-message">Welcome to Press Records. We sell a curated selection of the best music on vinyl record, along with the best HI-FI has to offer today. We add to our discography daily so keep an eye on our site.</p>
+            <p class="welcome-message">Welcome to Press Records. We sell a curated selection of the best music on vinyl
+                record, along with the best HI-FI has to offer today. We add to our discography daily so keep an eye on
+                our site.</p>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -61,12 +63,16 @@
                         {% endif %}
                         <div class="card-body-home pb-0">
                             <p class="mb-0 product-name text-truncate ps-2 text-center">
-                                <strong>{{ product.name }} - </strong><a href="{% url 'products' %}?artist_name={{ product.artist_name }}" class="product-artist">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a></p>
+                                <strong>{{ product.name }} - </strong>
+                                <a href="{% url 'products' %}?artist_name={{ product.artist_name }}"
+                                    class="product-artist">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a>
+                            </p>
                         </div>
                         <div class="card-footer pt-0 border-0 text-center">
                             <div class="row">
                                 <div class="col g-0 ps-1">
-                                    <p class="lead mb-0 mt-1 text-left font-weight-bold price-card-home">€{{ product.price }}
+                                    <p class="lead mb-0 mt-1 text-left font-weight-bold price-card-home">
+                                        €{{ product.price }}
                                     </p>
                                 </div>
                             </div>
@@ -134,7 +140,8 @@
                         <div class="card-footer pt-0 border-0 text-center">
                             <div class="row">
                                 <div class="col g-0 ps-1">
-                                    <p class="lead mb-0 mt-1 text-left font-weight-bold price-card-home">€{{ product.price }}
+                                    <p class="lead mb-0 mt-1 text-left font-weight-bold price-card-home">
+                                        €{{ product.price }}
                                     </p>
                                 </div>
                             </div>
@@ -172,8 +179,6 @@
             }
         }
     })
-
-    
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="

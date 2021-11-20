@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -19,10 +19,11 @@
         <div class="col">
             <h2 class="logo-font mb-4">Thank You</h2>
             <hr>
-            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.
+            </p>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-12 col-lg-7">
             <div class="order-confirmation-wrapper p-2 border">
@@ -194,7 +195,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-12 col-lg-7">
             {% if from_profile %}
@@ -205,12 +206,12 @@
                 <span class="text-uppercase">Back to Profile</span>
             </a>
             {% else %}
-                <a href="{% url 'products' %}" class="btn store-button-light my-2">
-                    <span class="icon mr-2">
-                        <i class="fas fa-gifts"></i>
-                    </span>
-                    <span class="text-uppercase">Now check out the latest deals!</span>
-                </a>
+            <a href="{% url 'products' %}" class="btn store-button-light my-2">
+                <span class="icon mr-2">
+                    <i class="fas fa-gifts"></i>
+                </span>
+                <span class="text-uppercase">Now check out the latest deals!</span>
+            </a>
             {% endif %}
         </div>
     </div>

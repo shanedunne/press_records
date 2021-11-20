@@ -43,7 +43,6 @@ class StripeWH_Handler:
         )
         print('Email Success')
 
-
     def handle_payment_intent_succeeded(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
@@ -62,7 +61,7 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
-         # Update profile information if save_info was checked
+        # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
