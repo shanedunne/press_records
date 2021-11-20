@@ -19,7 +19,9 @@ def all_blogs(request):
 
 
 def blog_post(request, blog_id):
-    """ A view to show single blogs """
+    """
+    A view to show single blogs
+    """
 
     blog = get_object_or_404(Blog, pk=blog_id)
 
@@ -32,11 +34,14 @@ def blog_post(request, blog_id):
 
 @login_required
 def add_blog(request):
-    """ Add a post to the blog section """
+    """
+    Add a post to the blog section
+    """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only authorised accounts can create blogs')
+        messages.error(request,
+                       'Sorry, only authorised accounts can create blogs')
         return redirect(reverse('home'))
-    
+
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
@@ -46,10 +51,11 @@ def add_blog(request):
             messages.success(request, 'Successfully added a blog post!')
             return redirect(reverse('blog_post', args=[blog.id]))
         else:
-            messages.error(request, 'Failed to add blog post. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add blog post. Please ensure the form is valid.')
     else:
         form = BlogForm()
-        
+
     template = 'blog/add_blog.html'
     context = {
         'form': form,
@@ -64,7 +70,7 @@ def edit_blog(request, blog_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only authorised users can edit blogs')
         return redirect(reverse('home'))
-    
+
     blog = get_object_or_404(Blog, pk=blog_id)
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog)
@@ -73,7 +79,8 @@ def edit_blog(request, blog_id):
             messages.success(request, 'Successfully updated blog!')
             return redirect(reverse('blog_post', args=[blog.id]))
         else:
-            messages.error(request, 'Failed to update blog. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to update blog. Please ensure the form is valid.')
     else:
         form = BlogForm(instance=blog)
         messages.info(request, f'You are editing {blog.title}')
@@ -91,11 +98,11 @@ def edit_blog(request, blog_id):
 def delete_blog(request, blog_id):
     """ Delete a blog """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only authorised users can delete blogs.')
+        messages.error(request,
+                       'Sorry, only authorised users can delete blogs.')
         return redirect(reverse('all_blogs'))
-    
+
     blog = get_object_or_404(Blog, pk=blog_id)
     blog.delete()
     messages.success(request, 'Blog deleted!')
     return redirect(reverse('all_blogs'))
-

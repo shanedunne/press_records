@@ -14,24 +14,20 @@ class TestCheckoutViews(TestCase):
             description='test description'
         )
         self.add_to_bag = reverse("add_to_bag",
-                                   kwargs={"item_id": self.product.id})
+                                  kwargs={"item_id": self.product.id})
 
-    
     def test_checkout_view(self):
         self.client.post(self.add_to_bag,
-                                    data={
-                                    'quantity': '1',
-                                    'redirect_url': '/'})
+                         data={'quantity': '1',
+                               'redirect_url': '/'})
         response = self.client.get(self.checkout)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "checkout/checkout.html")
-    
 
     def test_checkout_success_view(self):
         self.client.post(self.add_to_bag,
-                                    data={
-                                    'quantity': '1',
-                                    'redirect_url': '/'})
+                         data={'quantity': '1',
+                               'redirect_url': '/'})
         response = self.client.post(self.checkout,
                                     data={
                                         'full_name': 'Test Name',

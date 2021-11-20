@@ -44,9 +44,9 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
 | User No. | As a... | I want to be able to... | So that I can... |
 |----|:--------|:------------------------|:-----------------|
 5| Site User | Easily register for an account | Have personal account that saves my information |
-6| Site User | Easily Login or Logout | Access my profile with standard login |
+6| Site User | Easily Login or Logout | Access my account with standard login |
 7| Site User | Verify my account has been successfully created | Receive an email confirming account linked |
-8| Site User | Have a personalized user profile | View my order history, personal information and wishlist |
+8| Site User | Have a personalized user account | View my order history, personal information and wishlist |
 
 ### Registered User Extra Functionality
 | User No. | As a... | I want to be able to... | So that I can... |

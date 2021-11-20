@@ -25,12 +25,11 @@ class TestBlogViews(TestCase):
         )
         self.all_blogs = reverse("all_blogs")
         self.blog_post = reverse("blog_post",
-                                   kwargs={"blog_id": self.blog.id})
+                                 kwargs={"blog_id": self.blog.id})
         self.edit_blog = reverse("edit_blog",
-                                    kwargs={"blog_id": self.blog.id})
+                                 kwargs={"blog_id": self.blog.id})
         self.delete_blog = reverse("delete_blog",
-                                    kwargs={"blog_id": self.blog.id})
-
+                                   kwargs={"blog_id": self.blog.id})
 
     def test_get_all_blogs_page(self):
         """
@@ -49,8 +48,6 @@ class TestBlogViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blog/blog_post.html')
 
-    
-
     def test_get_add_blogs_page(self):
         """
         A test to get the add blog page
@@ -60,7 +57,6 @@ class TestBlogViews(TestCase):
         response = self.client.get('/blog/add/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blog/add_blog.html')
-    
 
     def test_get_edit_blog_page(self):
         """
@@ -72,7 +68,6 @@ class TestBlogViews(TestCase):
         response = self.client.get(self.edit_blog)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blog/edit_blog.html')
-
 
     def test_delete_blog(self):
         """
