@@ -39,9 +39,9 @@
                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                 </small>
                 {% endif %}
-                <span>
-                    <p class="lead mb-0 mt-3 text-left product-detail-price">€{{ product.price }}</p>
-                </span>
+                <br>
+                <span class="lead mb-0 mt-3 text-left product-detail-price">€{{ product.price }}</span>
+                <br>
                 <span>{% if request.user.is_authenticated %}
                     {% if product in wishlist_items %}
                     <a href="#">

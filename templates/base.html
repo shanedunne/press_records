@@ -8,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Vinyl record store selling good music, speakers and turntables">
   <link rel="icon" href="{{ MEDIA_URL}}favicon.png">
   {% endblock %}
 
@@ -146,8 +147,7 @@
     </nav>
   </header>
 
-  <div class="offcanvas offcanvas-start ml-3" tabindex="-1" id="offcanvasExample"
-    aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas offcanvas-start ml-3" tabindex="-1" id="offcanvasExample">
     <div class="offcanvas-header align-middle">
       <button type="button" class="btn-close btn-close-white offcanvas-close" data-bs-dismiss="offcanvas"
         aria-label="Close"></button>
@@ -281,7 +281,7 @@
 
 
   {% block postloadjs %}
-  <script type="text/javascript">
+  <script>
     var toastElList = [].slice.call(document.querySelectorAll('.toast'))
     var toastList = toastElList.map(function (toastEl) {
       return new bootstrap.Toast(toastEl)

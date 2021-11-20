@@ -59,7 +59,7 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
 ### Sorting and Searching
 | User No. | As a... | I want to be able to... | So that I can... |
 |----|:--------|:------------------------|:-----------------|
-12| Shopper | Sort/filter the list of available products | Find the products I want, by name, price or category |
+12| Shopper | Sort/filter the list of available products | Find the products I want, by name or price|
 13| Shopper | Have seperation on product types | Only see certain product types on particular pages |
 14| Shopper | Search for a product by name or artist | Find a specific product I'd like to purchase |
 
@@ -81,7 +81,7 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
 22| Store Owner | Delete a product | Remove items if no longer an option |
 23| Store Owner | Add a blog post | Add blog posts about items we sell |
 24| Store Owner | Edit and update a blog post | Easily change all blog information |
-25| Store Owner | Delete a blog | elete a blog if it is no longer relevant |
+25| Store Owner | Delete a blog | delete a blog if it is no longer relevant |
 
 ### Strategy
 - Provide a platform where users can find new music in vinyl form
@@ -200,8 +200,16 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 - [JS Hint](https://jshint.com/) - Used to test JavaScript
 - [PEP8 online](http://pep8online.com/) - Used to test Python code was written to PEP8 standards
 
+## Deployment
+### Heroku Deployment
+This project is hosted on Heroku. I deployed the Django app to Heroku after i had the majority of the basic functionality set up and working locally
 
-
+- Login to Heroku and press 'New' in the top right corner, then press 'Create New App'
+- Next I entered the name of the project and the nearest region to me
+- Next I navigated to 'Settings' and then 'Config Vars'. From here I proceeded to add the configuration variables that I had set up in my gitpod environment and then variables related to AWS and emails.
+- After this I navigated to the Deploy section.
+- Next I connected my GitHub repository for the project under 'Deployment Method'.
+- Finally, I selected the main branch and clicked 'Deploy Branch', ensuring Automatic Deployments were enables
 
 
 
