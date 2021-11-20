@@ -22,7 +22,7 @@
             {% if current_artists is None %}
             <h2 class="category-header">All Products</h2>
             {% else %}
-            <h2 class="category-header">{{ a.name }}</h2>
+            <h2 class="category-header">{{ a.friendly_name }}</h2>
             {% endif %}
             {% endfor %}
             {% endif %}
@@ -77,7 +77,7 @@
                                 {% endif %}
                                 <div class="card-body pb-0">
                                     <p class="mb-0 product-name"><strong>{{ product.name }} - </strong>
-                                            <a href="{% url 'products' %}?artist_name={{ product.artist_name }}" class="product-artist">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a>
+                                            <a href="{% url 'products' %}?artist_name={{ product.artist_name.name }}" class="product-artist">{% if product.artist_name %}{{ product.artist_name.friendly_name }}{% endif %}</a>
                                     </p>
                                 </div>
                                 <div class="card-footer pt-0 border-0 text-left">

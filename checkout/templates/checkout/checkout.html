@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-7">
                     <p class="my-0"><strong>{{ item.product.name }}</strong>{% if producr.artist_name %} -
-                        {{ item.product.artist_name }}{% endif %}</p>
+                        {{ item.product.artist_name.friendly_name }}{% endif %}</p>
                     <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">

@@ -64,8 +64,8 @@
                         <div class="card-body-home pb-0">
                             <p class="mb-0 product-name text-truncate ps-2 text-center">
                                 <strong>{{ product.name }} - </strong>
-                                <a href="{% url 'products' %}?artist_name={{ product.artist_name }}"
-                                    class="product-artist">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a>
+                                <a href="{% url 'products' %}?artist_name={{ product.artist_name.name }}"
+                                    class="product-artist">{% if product.artist_name %}{{ product.artist_name.friendly_name }}{% endif %}</a>
                             </p>
                         </div>
                         <div class="card-footer pt-0 border-0 text-center">

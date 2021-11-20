@@ -29,10 +29,9 @@
             <div class="product-details-container mb-5 mt-md-5">
                 <p class="mb-0 product-detail-name">{{ product.name }}</p>
                 {% if product.artist_name %}
-                <p class="mb-0"><a href="{% url 'products' %}?artist_name={{ product.artist_name }}"
-                        class="product-detail-artist">{% if product.artist_name %}{{ product.artist_name }}{% endif %}</a>
+                <p class="mb-0"><a href="{% url 'products' %}?artist_name={{ product.artist_name.name }}"
+                        class="product-detail-artist">{% if product.artist_name %}{{ product.artist_name.friendly_name }}{% endif %}</a>
                 </p>
-                <p>{{ product.artist_name.friendly_name }}</p>
                 {% endif %}
                 {% if request.user.is_superuser %}
                 <small class="ml-3">
