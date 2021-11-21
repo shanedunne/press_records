@@ -18,7 +18,7 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 
 # Quick-start development settings - unsuitable for production
