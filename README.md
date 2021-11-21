@@ -7,6 +7,7 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
 ## Table of Contents:
 
 - [UX](#ux)
+  - [Business Objectives(#business-objectives)]
   - [User Stories](#user-stories)
   - [Strategy](#strategy)
   - [Scope](#scope)
@@ -28,6 +29,12 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
 - [Acknowledgments](#acknowledgments)
 
 ## UX
+
+### Business Objectives
+- The main objective of the Press Records site is to provide users a place to purchase high quality vinyls and HI-FI products.
+- Press Records aims to add new products daily to the store in order to attract and satisfy customers
+- The layout and design of the site is such that users can easily purchase products and won't be distracted by unnecessary content.
+- The owners would also like a place to share their reviews of records, which is why a blog has been incorporated
 
 ### User Stories
 <hr>
