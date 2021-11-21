@@ -11,7 +11,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
 <div class="container mb-2 mt-3">
     <div class="row">
         <div class="col">
@@ -21,81 +20,79 @@
     </div>
 
     <div class="row">
-            {% if wishlist_items %}
+        {% if wishlist_items %}
 
 
-                    {% for product in wishlist_items %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                        <div class="card product-card h-100 border-0">
-                            {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top img-fluid" src="{{ product.image.url }}"
-                                    alt="{{ product.name }}">
-                            </a>
-                            {% else %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                    alt="{{ product.name }}">
-                            </a>
-                            {% endif %}
-                            <div class="card-body pb-0">
-                                <p class="mb-0 product-name">
-                                    <strong>{{ product.name }}</strong>{% if product.artist_name %} -
-                                    {{ product.artist_name }}{% endif %}</p>
-                            </div>
-                            <div class="card-footer pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <a href="{% url 'delete_wishlist_item' product.id %}" class="btn store-button store-button-light">
-                                            <span class="text-uppercase">Remove Item</span>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-7">
-                                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                                            {% csrf_token %}
-                                            <button type="submit" class="btn btn-lg store-button store-button-dark mt-3">Add To Bag</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+        {% for product in wishlist_items %}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <div class="card product-card h-100 border-0">
+                {% if product.image %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+                <div class="card-body pb-0">
+                    <p class="mb-0 product-name">
+                        <strong>{{ product.name }}</strong>{% if product.artist_name %} -
+                        {{ product.artist_name }}{% endif %}</p>
+                </div>
+                <div class="card-footer pt-0 border-0 text-left">
+                    <div class="row">
+                        <div class="col">
+                            <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}
+                            </p>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-block mb-5">
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                    
-            </div>
-            {% else %}
-            <p class="lead mb-5">You have nothing in your Wishlist</p>
-            <div class="row">
-                <div class="col">
-                    <a href="{% url 'products' %}" class="btn store-button store-button-light btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <a href="{% url 'delete_wishlist_item' product.id %}"
+                                class="btn store-button store-button-light">
+                                <span class="text-uppercase">Remove Item</span>
+                            </a>
+                        </div>
+                        <div class="col-lg-7">
+                            <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-lg store-button store-button-dark mt-3">Add To
+                                    Bag</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            {% endif %}
+        </div>
+        {% if forloop.counter|divisibleby:1 %}
+        <div class="col-12 d-sm-none mb-5">
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:2 %}
+        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:3 %}
+        <div class="col-12 d-none d-lg-block d-xl-block mb-5">
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    {% else %}
+    <p class="lead mb-5">You have nothing in your Wishlist</p>
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'products' %}" class="btn store-button store-button-light btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
         </div>
     </div>
+    {% endif %}
 </div>
 {% endblock %}
 
@@ -104,19 +101,20 @@
 {{ block.super }}
 {% include 'products/includes/quantity_selector.html' %}
 
-<script type="text/javascript">
-
+<script>
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 
