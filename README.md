@@ -141,6 +141,8 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 - Blog
 - - Blog - Contains all information for each blog post
 
+![Database](readme-docs/db_diagram/db_diagram.png)
+
 ## Features
 ### Deployed Features
 - Collapsable navigation bar from Bootstrap
