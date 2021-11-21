@@ -8,7 +8,6 @@ html {
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  padding-bottom: 210px;
   font-family: 'Roboto', sans-serif;
   background-color: #F5F6F1;
   color: #414833;
@@ -205,11 +204,19 @@ main {
 
 /*----- Footer ------*/
 
-.sticky-footer {
-  position: sticky;
+/* .sticky-footer {
   top: 100%;
+  position: sticky;
+} */
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -210px;
 }
 
+.push {
+  height: 210px;
+}
 footer {
   background-color: #656d4a;
   height: 210px;
