@@ -1,5 +1,5 @@
 # Press Records
-![Project Across Devices](static/img/mockup.png)
+![Home](readme-docs/images/home.PNG)
 
 Press Records is an ecommerce store delivering a wide variety of vinyl records, speakers and turntables to music enthusiasts around the globe
 
@@ -7,7 +7,7 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
 ## Table of Contents:
 
 - [UX](#ux)
-  - [Business Objectives(#business-objectives)]
+  - [Business Objectives](#business-objectives)
   - [User Stories](#user-stories)
   - [Strategy](#strategy)
   - [Scope](#scope)
@@ -211,6 +211,9 @@ Initially this database was created and managed through SQLite3. As the project 
 - [WC3 CSS Validator](https://jigsaw.w3.org/css-validator/) - Used to test CSS code
 - [JS Hint](https://jshint.com/) - Used to test JavaScript
 - [PEP8 online](http://pep8online.com/) - Used to test Python code was written to PEP8 standards
+
+## Testing
+Testing documentation for this project can be found [HERE](TESTING.md)
 
 ## Deployment
 ### Heroku Deployment

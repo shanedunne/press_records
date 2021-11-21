@@ -55,3 +55,100 @@
 - Again, it is recommended to visit the Django admin's blog section, choose the blog to update and edit from there with the WYSIWYG editor
 25. Delete a blog if it is no longer relevant
 - The owner can delete a blog post from the blog post's page
+
+## Automated View Testing
+- I wrote automated testing for the majority of the views across the site. View testing ws written to ensure the correct template was being passed along with the correct HttpResponse codes. Tests were also written for adding, updating and deleting the shopping bag and also the CRUD functionality for the blog app.
+
+- Python Coverage has been installed and can be run in a cloned repository to view coverage reports
+
+## Manual Navigation Link Testing
+**Nav Bar**
+- Checked all nav bar items direct user to correct page including logo returning to home
+- Checked that My Account and Wishlist only displays to logged in users
+- Checked Shop by category filters content correctly
+- Checked that the shopping bag link takes users to the shopping bag
+
+**Home Page**
+- Checked call to action routes to the products page
+- Checked clicking the product displayed in the caurosel takes you to the correct product page
+- Checked that the category section routes to the correct filtered products page
+- Checked social links open in a new tab
+
+**Register**
+- Checked Already Registered link directs to the login page
+
+**Login**
+- Checked Not Registered link directs to the registration page
+
+**Products**
+- Checked that by clicking a product users are directed to the specific product detail page
+- Checked that by clicking an artist name users are directed to the artists page
+
+**Shopping Bag**
+- Checked that Checkout takes users to the checkout page
+- Checked that 'Keep Shopping' returns users to the products page
+
+**Account**
+- Checked that by clicking on the order number in past orders, users are taken to a summary of that order
+
+**Blog**
+- Checked that by clicking on a blog image users are taken to that particular post
+
+## Page Functionality Testing - User
+### Nav Bar
+- Checked that Login and Register appear if no user is logged in
+- Checked that Account, Wishlist and Logout appear if user is signed in
+
+### Register
+- Checked message appears if user tries to register with an existing username
+- Checked email field requires email formatting
+
+### Login
+- Checked messages states username/password incorrect if user fails to login
+
+### Logout
+- Checked that logout button returns to home page
+
+### Profile
+- Checked that user can save updated shipping information from the profile
+
+### Wishlist
+- Checked that users can add item to bag from wishlist
+- Checked that users can remove items from wishlist
+
+### Product
+- Checked that users can add products with choosen quantity to bag
+
+### Shopping Bag
+- Checked that users can update item quantity
+- Checked that users can remove item from bag
+- Checked that users can proceed to checkout with items in bag
+
+### Checkout
+- Checked that users can fill in shipping details
+- Checked that shipping details carry from Account if already saved their
+- Checked that users can successfully process a purchase
+    - All purchases were tested using the Stripe test card
+    - 4242 4242 4242 4242 02/24 242 12345
+
+## Page Functionality Testing - Owner
+### Products
+- Checked owner can successfully add a product
+- Checked that owner can edit a product and save the updated information
+- Check that owners can delete a product from the store
+
+### Blogs
+- Checked owner can successfully add a blog post. As mentioned in readme.md, blogs should be added from the Django Admin for now
+- Checked that owner can edit a blog and save the updated information
+- Check that owners can delete a blog from the store
+
+### 404 Page
+- Checked route is working as intended and 404 page is displayed if invalid link entered
+- Checked Return to Home button reirects to the home page
+
+## Responsiveness
+Responsiveness was checked using [Responsinator](https://www.responsinator.com/) while also designed with responsiveness in mind with regular testing on Dev Tools. The responsiveness has been tested across multiple devices such as iPhone 8, iPhone 8 Plus, iPhone X, Samusing Galaxy X5, iPad etc. on the Responsinator site.
+
+
+## Performance
+I tested the performance of the app with Lighthouse. At this point, the 'Performance' results on the were not satisfactory. This is mainly due to serving images too large for the carousels. The majority of the other pages are scoring highly however. I am to fix the image serving issue at a later date but ran out of time before submission
