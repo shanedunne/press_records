@@ -130,7 +130,7 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 
 ## Database Structure
 ### Models
-
+Initially this database was created and managed through SQLite3. As the project progressed and it was time to push to Heroku, the data was deployed to PostgreSQL. Model formation reasoning is described below along with a database diagram for visualising the relationships between datapoints across the site
 - Profile/Users
 - - User - User information from Allauth including username, name, email address, password
 - - Profile - Contains the users information for orders and addresses etc
@@ -159,16 +159,19 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 - Shop by category options
 - View all records by a particular artist
 - Search product and artist name functionality
+- Ability to sort by name and price on the products page
 - Add, edit and delete functionality for the store admin on products and blogs
 - Register, Login and Logout functionality
 - Full purchasing functionality through Stripe
 - A Wishlist for saving products to your account
 - Ability to save shipping details in user account
 - Ability to view past orders
+- Order confirmation emails for all orders
+- A Record Review blog space to check out reviews on vinyls sold at Press Records
 
 ### Features to consider implementing in the future
 - Review section on products
-- I have set up a Genre model and genres are recorded for all vinyls. In the future i wouls like to set up functionality to be able to view all vinyls from a particular genre
+- I have set up a Genre model and genres are recorded for all vinyls. In the future i would like to set up functionality to be able to view all vinyls from a particular genre
 - Integrate a WYSIWYG editor directly into the blog management to not have to direct an author towards the django admin for blog post entries
 
 ## Technologies Used
@@ -185,7 +188,7 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 - [MDBootstrap](https://mdbootstrap.com/) - CSS framework
 - [jQuery](https://jquery.com/) - JavaScript library.
 - [Django](https://en.wikipedia.org/wiki/Django_(web_framework) - Python framework for building web applications
-- [MongoDB](https://www.mongodb.com/) - NoSQL database program, using JSON-like documents.
+- [TinyMCE](https://www.tiny.cloud/) - Integrated into the add blog page on the Django Admin
 - [ImageKit](https://imagekit.io/) - Used to host images for display on site
 - - ImageKit enables automatic optimisation and real time transformation to resize images depending on the screen size in use
 
@@ -200,7 +203,7 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 - [Youtube](https://www.youtube.com/) - Tutorial resource
 - [Balsamiq](https://balsamiq.com/wireframes/) - Used to generate Wireframes
 - [W3Schools](https://www.w3schools.com/js/default.asp) - Used to check up on methods etc.
-- [Quick DBD](https://www.quickdatabasediagrams.com/) - Database diagram visualisation tool
+- [DB Diagram](https://dbdiagram.io/home) - Database diagram visualisation tool
 - [Coolors](https://coolors.co/) - Help find suitable complimentary colours for the site
 
 ## Code Validation Tools
@@ -220,6 +223,14 @@ This project is hosted on Heroku. I deployed the Django app to Heroku after i ha
 - Next I connected my GitHub repository for the project under 'Deployment Method'.
 - Finally, I selected the main branch and clicked 'Deploy Branch', ensuring Automatic Deployments were enables
 
+### Local Deployment
+To run a copy of this site locally you can follow the below instructions
+
+With Python3 and git installed, run the below command in your terminal
+
+"""
+tesr
+"""
 
 
 
