@@ -204,17 +204,11 @@ main {
 
 /*----- Footer ------*/
 
-/* .sticky-footer {
+.sticky-footer {
   top: 100%;
   position: sticky;
-} */
-.page-container {
-  position: relative;
-  min-height: 100vh;
 }
-.wrapper {
-  padding-bottom: 210px;
-}
+
 
 .push {
   height: 210px;
