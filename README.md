@@ -226,11 +226,38 @@ This project is hosted on Heroku. I deployed the Django app to Heroku after i ha
 ### Local Deployment
 To run a copy of this site locally you can follow the below instructions
 
-With Python3 and git installed, run the below command in your terminal
+ - With Python3 and git installed, run the below command in your terminal
 
-"""
-tesr
-"""
+```
+git clone https://github.com/shanedunne/press_records.git
+
+```
+- Next, you must install all required apps by running the following
+```
+      pip3 install -r requirements.txt
+```
+- Next we need to set up environment variables. This can be done in an env.py file which must be added to the .gitignore file to not expose secret keys. Alternatively if you are hosting on Gitpod you can add the variables through the Dashboard and settings. We need to add the following
+
+  - SECRET_KEY
+  - STRIPE_PUBLIC_KEY
+  - STRIPE_SECRET_KEY
+  - STRIPE_WEBHOOK_SECRET
+  - DEVELOPMENT = True
+
+  - You can get the Stripe information from the Stripe Developers dashboard.
+- Once this is all set up we can now run migrations
+```
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+```
+- The next step is to create a super user to have access to the Django Admin. This can be done by entering the following command in the terminal and following the instructions
+```
+    python3 manage.py createsuperuser
+```
+- Finally, to run the app locally, ender the following command into the terminal
+```
+python3 manage.py runserver
+```
 
 
 
