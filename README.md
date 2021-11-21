@@ -58,7 +58,6 @@ You can find a live link to the site [HERE](https://press-records.herokuapp.com/
 ### Registered User Extra Functionality
 | User No. | As a... | I want to be able to... | So that I can... |
 |----|:--------|:------------------------|:-----------------|
-
 9| Registered User | Add products to my wishlist | Somewhere i can save products i am interested in purchasing at a later date |
 10| Registered User | Transfer items from my wishlist to my shopping bag | Easy add to bag button from wishlist |
 11| Registered User | Remove items from my wishlist | Delete item if i no longer want or have aquired elsewhere |
@@ -132,21 +131,20 @@ I used the Roberto font with 300 weighting and sans-serif as backup
 ### Models
 Initially this database was created and managed through SQLite3. As the project progressed and it was time to push to Heroku, the data was deployed to PostgreSQL. Model formation reasoning is described below along with a database diagram for visualising the relationships between datapoints across the site
 - Profile/Users
-- - User - User information from Allauth including username, name, email address, password
-- - Profile - Contains the users information for orders and addresses etc
-<br>
+  - User - User information from Allauth including username, name, email address, password
+  - Profile - Contains the users information for orders and addresses etc
 - Products
-- - Category - Model containing categories
-- - Product - Contains all relevant information for a product
-- - Genre - Model to signify genre of a record
-- - Artist - This model holds all artists whos vinyls Press Records sells.
+  - Category - Model containing categories
+  - Product - Contains all relevant information for a product
+  - Genre - Model to signify genre of a record
+  - Artist - This model holds all artists whos vinyls Press Records sells.
 - Wishlist
-- - Wishlist - This model stores information on what products are in users wishlists
+  - Wishlist - This model stores information on what products are in users wishlists
 - Orders
-- - Order - Model to contain all order information from products to price and shipping addresses
-- - OrderLineItem - Each product creates an orderlineitem in the bag
+  - Order - Model to contain all order information from products to price and shipping addresses
+  - OrderLineItem - Each product creates an orderlineitem in the bag
 - Blog
-- - Blog - Contains all information for each blog post
+  - Blog - Contains all information for each blog post
 
 ![Database](readme-docs/db_diagram/db_diagram.png)
 
@@ -261,6 +259,6 @@ git clone https://github.com/shanedunne/press_records.git
 ```
 python3 manage.py runserver
 ```
-
-
-
+# Acknowledgments
+- Thanks to my mentor Gerry McBride for his help
+- Thanks to the Code Institute whos tuition has brought my skills to a level to be able to achieve this. The tutor support have been very helpful and patient

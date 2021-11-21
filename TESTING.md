@@ -129,7 +129,7 @@
 - Checked that shipping details carry from Account if already saved their
 - Checked that users can successfully process a purchase
     - All purchases were tested using the Stripe test card
-    - 4242 4242 4242 4242 02/24 242 12345
+    - 4242 4242 4242 4242 - 02/24 - 242 - 12345
 
 ## Page Functionality Testing - Owner
 ### Products
@@ -146,8 +146,57 @@
 - Checked route is working as intended and 404 page is displayed if invalid link entered
 - Checked Return to Home button reirects to the home page
 
+## Code Validation
+- [WC3 HTML Validator](https://validator.w3.org/) - Passed
+- [WC3 CSS Validator](https://jigsaw.w3.org/css-validator/) - Passed
+- [JS Hint](https://jshint.com/) - Passed
+- [PEP8 online](http://pep8online.com/) - Passed
+
+## Issues and Solutions
+- I had originally set up the Artist model with a name field type of CharField. I later realised that i needed this to be a ForeignKey. I found the following work around on Stack Overflow to help
+    - Add an new ForeignKey field to Product and migrate
+    - Create an empty migration to populate the new entry
+    ```
+    ./manage.py makemigrations --empty --name transfer_artists product
+    ```
+    - Create a single RunPython operation to link records. This operation happens within the migration file
+    ```
+    from django.db import migrations
+
+    def link_artists(apps, schema_editor):
+        Product = apps.get_model('products', 'Product')
+        Artist = apps.get_model('products', 'Artist')
+        for product in Product.objects.all():
+            artist_name, created = Artist.objects.get_or_create(name=product.artist_name, defaults={'name': 'Default Name'})
+            product.artist_link = artist_name
+            product.save()
+
+
+    class Migration(migrations.Migration):
+
+        dependencies = [
+            ('products', '0009_auto_20211108_0938'),
+        ]
+
+        operations = [
+            migrations.RunPython(link_artists),
+        ]
+    ```
+    - Then once the above is done, i deleted the original artist field and renamed the new field to replace the old. This was done in two migrations
+    - The workaround can be found here https://stackoverflow.com/questions/35999186/change-type-of-django-model-field-from-charfield-to-foreignkey
+
+
+
 ## Responsiveness
 Responsiveness was checked using [Responsinator](https://www.responsinator.com/) while also designed with responsiveness in mind with regular testing on Dev Tools. The responsiveness has been tested across multiple devices such as iPhone 8, iPhone 8 Plus, iPhone X, Samusing Galaxy X5, iPad etc. on the Responsinator site.
+
+## Browser Testing
+The deployed site was tested on 
+- Google Chrome
+- Edge
+- Safari
+- Firefox
+- Brave
 
 
 ## Performance
