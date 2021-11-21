@@ -207,10 +207,7 @@ main {
 
 /*----- Footer ------*/
 
-.sticky-footer {
-  top: 100%;
-  position: sticky;
-}
+
 
 
 .push {
@@ -219,7 +216,6 @@ main {
 footer {
   background-color: #656d4a;
   height: 210px;
-  position: absolute;
   bottom: 0px;
   left: 0px;
   right: 0px;
