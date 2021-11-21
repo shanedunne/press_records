@@ -208,10 +208,12 @@ main {
   top: 100%;
   position: sticky;
 } */
-
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
 .wrapper {
-  min-height: 100%;
-  margin-bottom: -210px;
+  padding-bottom: 210px;
 }
 
 .push {
@@ -220,7 +222,7 @@ main {
 footer {
   background-color: #656d4a;
   height: 210px;
-  position: relative;
+  position: absolute;
   bottom: 0px;
   left: 0px;
   right: 0px;
